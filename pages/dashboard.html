@@ -56,65 +56,141 @@
                     <a class="button button--primary" href="registrar-encuesta.html">Registrar Encuesta</a>
                 </header>
 
-                <form class="dashboard-filters surface" action="dashboard.html" method="get">
-                    <div class="form-field">
-                        <label class="form-label" for="periodo">Periodo</label>
-                        <select class="form-select" id="periodo" name="periodo">
-                            <option value="ago-2026" selected>Agosto 2026</option>
-                            <option value="jul-2026">Julio 2026</option>
-                            <option value="jun-2026">Junio 2026</option>
-                        </select>
+                <form class="dashboard-filters" action="dashboard.html" method="get">
+                    <div class="filters-header">
+                        <div class="filters-header__title">
+                            <span>Filtros de Análisis</span>
+                            <span class="filter-badge">3 filtros activos</span>
+                        </div>
+                        <div class="filter-presets" role="group" aria-label="Filtros rápidos">
+                            <span class="small-flexo text-muted filter-presets__label">Acceso rápido:</span>
+                            <a href="dashboard.html?periodo=ago-2026&semana=todas&canal=todos" class="chip chip--active"
+                                aria-current="page">Mes actual (Ago)</a>
+                            <a href="dashboard.html?periodo=jul-2026&semana=todas&canal=todos" class="chip">Julio
+                                2026</a>
+                            <a href="dashboard.html?periodo=ago-2026&semana=s4&canal=todos" class="chip">Última semana
+                                (S4)</a>
+                            <a href="dashboard.html?periodo=ago-2026&semana=todas&canal=banca-movil" class="chip">Solo
+                                banca móvil</a>
+                        </div>
                     </div>
 
-                    <div class="form-field">
-                        <label class="form-label" for="semana">Semana</label>
-                        <select class="form-select" id="semana" name="semana">
-                            <option value="todas" selected>Todas las semanas</option>
-                            <option value="s1">Semana 1</option>
-                            <option value="s2">Semana 2</option>
-                            <option value="s3">Semana 3</option>
-                            <option value="s4">Semana 4</option>
-                        </select>
-                    </div>
+                    <div class="filters-grid">
+                        <div class="form-field">
+                            <label class="form-label" for="periodo">Periodo</label>
+                            <select class="form-select" id="periodo" name="periodo">
+                                <option value="ago-2026" selected>Agosto 2026</option>
+                                <option value="jul-2026">Julio 2026</option>
+                                <option value="jun-2026">Junio 2026</option>
+                            </select>
+                        </div>
 
-                    <div class="form-field">
-                        <label class="form-label" for="canal">Canal</label>
-                        <select class="form-select" id="canal" name="canal">
-                            <option value="todos" selected>Todos los canales</option>
-                            <option value="atm">Cajeros automáticos</option>
-                            <option value="agentes">Agentes</option>
-                            <option value="banca-movil">Banca móvil</option>
-                            <option value="plataforma">Plataforma</option>
-                            <option value="ventanilla">Ventanilla</option>
-                        </select>
-                    </div>
+                        <div class="form-field">
+                            <label class="form-label" for="semana">Semana</label>
+                            <select class="form-select" id="semana" name="semana">
+                                <option value="todas" selected>Todas las semanas</option>
+                                <option value="s1">Semana 1</option>
+                                <option value="s2">Semana 2</option>
+                                <option value="s3">Semana 3</option>
+                                <option value="s4">Semana 4</option>
+                            </select>
+                        </div>
 
-                    <button class="button button--secondary" type="submit">Aplicar Filtros</button>
+                        <div class="form-field">
+                            <label class="form-label" for="canal">Canal</label>
+                            <select class="form-select" id="canal" name="canal">
+                                <option value="todos" selected>Todos los canales</option>
+                                <option value="atm">Cajeros automáticos</option>
+                                <option value="agentes">Agentes</option>
+                                <option value="banca-movil">Banca móvil</option>
+                                <option value="plataforma">Plataforma</option>
+                                <option value="ventanilla">Ventanilla</option>
+                            </select>
+                        </div>
+
+                        <div class="filters-actions">
+                            <button class="button button--primary" type="submit">Aplicar Filtros</button>
+                            <a class="button button--secondary" href="dashboard.html"
+                                title="Restablecer valores iniciales">Restablecer</a>
+                        </div>
+                    </div>
                 </form>
 
                 <section class="grid grid--metrics" aria-label="Indicadores principales">
                     <article class="card card--metric">
-                        <p class="metric-card__label">NPS General</p>
-                        <p class="metric-card__value">56</p>
-                        <span class="metric-card__trend metric-card__trend--positive">+4 puntos vs. julio</span>
+                        <div class="metric-card__header">
+                            <div>
+                                <p class="metric-card__label">NPS General</p>
+                                <div class="metric-card__main">
+                                    <span class="metric-card__value">56</span>
+                                    <svg class="metric-sparkline metric-sparkline--blue" viewBox="0 0 60 24"
+                                        aria-hidden="true">
+                                        <path d="M2 18 L18 16 L36 8 L58 4" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metric-card__footer">
+                            <span class="metric-card__trend metric-card__trend--positive">+4 puntos vs. julio</span>
+                            <span class="metric-card__benchmark">Zona Excelencia (≥50)</span>
+                        </div>
                     </article>
 
                     <article class="card card--metric">
-                        <p class="metric-card__label">Respuestas</p>
-                        <p class="metric-card__value">2.486</p>
-                        <span class="metric-card__trend metric-card__trend--positive">+8,2% vs. julio</span>
+                        <div class="metric-card__header">
+                            <div>
+                                <p class="metric-card__label">Respuestas Totales</p>
+                                <div class="metric-card__main">
+                                    <span class="metric-card__value">2.486</span>
+                                    <svg class="metric-sparkline metric-sparkline--info" viewBox="0 0 60 24"
+                                        aria-hidden="true">
+                                        <path d="M2 20 L20 15 L38 12 L58 6" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metric-card__footer">
+                            <span class="metric-card__trend metric-card__trend--positive">+8,2% vs. julio</span>
+                            <span class="metric-card__benchmark">100% de la meta mensual</span>
+                        </div>
                     </article>
 
                     <article class="card card--metric">
-                        <p class="metric-card__label">Promotores</p>
-                        <p class="metric-card__value">68%</p>
-                        <span class="metric-card__trend metric-card__trend--positive">+3,1 pp</span>
+                        <div class="metric-card__header">
+                            <div>
+                                <p class="metric-card__label">Promotores</p>
+                                <div class="metric-card__main">
+                                    <span class="metric-card__value">68%</span>
+                                    <svg class="metric-sparkline metric-sparkline--success" viewBox="0 0 60 24"
+                                        aria-hidden="true">
+                                        <path d="M2 16 L20 14 L38 8 L58 5" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metric-card__footer">
+                            <span class="metric-card__trend metric-card__trend--positive">+3,1 pp</span>
+                            <span class="metric-card__benchmark">Meta: &gt;65%</span>
+                        </div>
                     </article>
 
                     <article class="card card--metric">
-                        <p class="metric-card__label">Detractores</p>
-                        <p class="metric-card__value">12%</p>
-                        <span class="metric-card__trend metric-card__trend--positive">−0,9 pp</span>
+                        <div class="metric-card__header">
+                            <div>
+                                <p class="metric-card__label">Detractores</p>
+                                <div class="metric-card__main">
+                                    <span class="metric-card__value">12%</span>
+                                    <svg class="metric-sparkline metric-sparkline--orange" viewBox="0 0 60 24"
+                                        aria-hidden="true">
+                                        <path d="M2 6 L20 10 L38 14 L58 18" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metric-card__footer">
+                            <span class="metric-card__trend metric-card__trend--positive">−0,9 pp (Favorable)</span>
+                            <span class="metric-card__benchmark">Tolerancia: &lt;15%</span>
+                        </div>
                     </article>
                 </section>
 
@@ -123,46 +199,135 @@
                         <header class="card__header">
                             <div>
                                 <h2>Evolución Semanal</h2>
-                                <p class="small-flexo text-muted">NPS y Composición por Semana</p>
+                                <p class="small-flexo text-muted">NPS y Composición de Clientes por Semana</p>
                             </div>
                             <span class="status-badge status-badge--active">Agosto 2026</span>
                         </header>
                         <div class="card__body">
-                            <div class="chart-area" aria-label="Gráfico de barras de cuatro semanas">
-                                <div class="chart-bar-group" aria-label="Semana 1">
-                                    <span class="chart-bar" style="--bar-height: 72%" title="Promotores: 66%"></span>
-                                    <span class="chart-bar chart-bar--muted" style="--bar-height: 28%"
-                                        title="Pasivos: 22%"></span>
-                                    <span class="chart-bar chart-bar--orange" style="--bar-height: 18%"
-                                        title="Detractores: 12%"></span>
+                            <div class="chart-area-container">
+                                <div class="chart-gridlines" aria-hidden="true">
+                                    <div class="chart-gridline-row">
+                                        <span class="chart-gridline-label">75%</span>
+                                        <span class="chart-gridline-line"></span>
+                                    </div>
+                                    <div class="chart-gridline-row">
+                                        <span class="chart-gridline-label">50%</span>
+                                        <span class="chart-gridline-line"></span>
+                                    </div>
+                                    <div class="chart-gridline-row">
+                                        <span class="chart-gridline-label">25%</span>
+                                        <span class="chart-gridline-line"></span>
+                                    </div>
+                                    <div class="chart-gridline-row">
+                                        <span class="chart-gridline-label">0%</span>
+                                        <span class="chart-gridline-line"></span>
+                                    </div>
                                 </div>
-                                <div class="chart-bar-group" aria-label="Semana 2">
-                                    <span class="chart-bar" style="--bar-height: 76%" title="Promotores: 68%"></span>
-                                    <span class="chart-bar chart-bar--muted" style="--bar-height: 25%"
-                                        title="Pasivos: 20%"></span>
-                                    <span class="chart-bar chart-bar--orange" style="--bar-height: 17%"
-                                        title="Detractores: 12%"></span>
-                                </div>
-                                <div class="chart-bar-group" aria-label="Semana 3">
-                                    <span class="chart-bar" style="--bar-height: 79%" title="Promotores: 70%"></span>
-                                    <span class="chart-bar chart-bar--muted" style="--bar-height: 24%"
-                                        title="Pasivos: 19%"></span>
-                                    <span class="chart-bar chart-bar--orange" style="--bar-height: 16%"
-                                        title="Detractores: 11%"></span>
-                                </div>
-                                <div class="chart-bar-group" aria-label="Semana 4">
-                                    <span class="chart-bar" style="--bar-height: 75%" title="Promotores: 68%"></span>
-                                    <span class="chart-bar chart-bar--muted" style="--bar-height: 27%"
-                                        title="Pasivos: 20%"></span>
-                                    <span class="chart-bar chart-bar--orange" style="--bar-height: 18%"
-                                        title="Detractores: 12%"></span>
+
+                                <div class="chart-area" aria-label="Gráfico de barras de cuatro semanas">
+                                    <div class="chart-column-wrapper">
+                                        <span class="chart-week-pill">S1: NPS 54</span>
+                                        <div class="chart-bar-group" aria-label="Semana 1">
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar" style="--bar-height: 66%" tabindex="0"
+                                                    role="img" aria-label="Semana 1, promotores: 66%"></span>
+                                                <span class="chart-tooltip">Promotores: 66%</span>
+                                            </div>
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar chart-bar--muted" style="--bar-height: 22%"
+                                                    tabindex="0" role="img" aria-label="Semana 1, pasivos: 22%"></span>
+                                                <span class="chart-tooltip">Pasivos: 22%</span>
+                                            </div>
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar chart-bar--orange" style="--bar-height: 12%"
+                                                    tabindex="0" role="img"
+                                                    aria-label="Semana 1, detractores: 12%"></span>
+                                                <span class="chart-tooltip">Detractores: 12%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chart-column-wrapper">
+                                        <span class="chart-week-pill">S2: NPS 56</span>
+                                        <div class="chart-bar-group" aria-label="Semana 2">
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar" style="--bar-height: 68%" tabindex="0"
+                                                    role="img" aria-label="Semana 2, promotores: 68%"></span>
+                                                <span class="chart-tooltip">Promotores: 68%</span>
+                                            </div>
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar chart-bar--muted" style="--bar-height: 20%"
+                                                    tabindex="0" role="img" aria-label="Semana 2, pasivos: 20%"></span>
+                                                <span class="chart-tooltip">Pasivos: 20%</span>
+                                            </div>
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar chart-bar--orange" style="--bar-height: 12%"
+                                                    tabindex="0" role="img"
+                                                    aria-label="Semana 2, detractores: 12%"></span>
+                                                <span class="chart-tooltip">Detractores: 12%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chart-column-wrapper">
+                                        <span class="chart-week-pill">S3: NPS 59</span>
+                                        <div class="chart-bar-group" aria-label="Semana 3">
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar" style="--bar-height: 70%" tabindex="0"
+                                                    role="img" aria-label="Semana 3, promotores: 70%"></span>
+                                                <span class="chart-tooltip">Promotores: 70%</span>
+                                            </div>
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar chart-bar--muted" style="--bar-height: 19%"
+                                                    tabindex="0" role="img" aria-label="Semana 3, pasivos: 19%"></span>
+                                                <span class="chart-tooltip">Pasivos: 19%</span>
+                                            </div>
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar chart-bar--orange" style="--bar-height: 11%"
+                                                    tabindex="0" role="img"
+                                                    aria-label="Semana 3, detractores: 11%"></span>
+                                                <span class="chart-tooltip">Detractores: 11%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chart-column-wrapper">
+                                        <span class="chart-week-pill">S4: NPS 56</span>
+                                        <div class="chart-bar-group" aria-label="Semana 4">
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar" style="--bar-height: 68%" tabindex="0"
+                                                    role="img" aria-label="Semana 4, promotores: 68%"></span>
+                                                <span class="chart-tooltip">Promotores: 68%</span>
+                                            </div>
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar chart-bar--muted" style="--bar-height: 20%"
+                                                    tabindex="0" role="img" aria-label="Semana 4, pasivos: 20%"></span>
+                                                <span class="chart-tooltip">Pasivos: 20%</span>
+                                            </div>
+                                            <div class="chart-bar-wrapper">
+                                                <span class="chart-bar chart-bar--orange" style="--bar-height: 12%"
+                                                    tabindex="0" role="img"
+                                                    aria-label="Semana 4, detractores: 12%"></span>
+                                                <span class="chart-tooltip">Detractores: 12%</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="cluster-24 bcp-mt-16" aria-label="Leyenda del gráfico">
-                                <span class="small-flexo"><strong>S1:</strong> NPS 54</span>
-                                <span class="small-flexo"><strong>S2:</strong> NPS 56</span>
-                                <span class="small-flexo"><strong>S3:</strong> NPS 59</span>
-                                <span class="small-flexo"><strong>S4:</strong> NPS 56</span>
+
+                            <div class="chart-legend-row" aria-label="Leyenda del gráfico">
+                                <div class="chart-legend-item">
+                                    <span class="chart-legend-swatch" style="background: #51c31b"></span>
+                                    <span>Promotores</span>
+                                </div>
+                                <div class="chart-legend-item">
+                                    <span class="chart-legend-swatch" style="background: #ffc633"></span>
+                                    <span>Pasivos</span>
+                                </div>
+                                <div class="chart-legend-item">
+                                    <span class="chart-legend-swatch" style="background: #ff451d"></span>
+                                    <span>Detractores</span>
+                                </div>
                             </div>
                         </div>
                     </article>
@@ -171,31 +336,39 @@
                         <header class="card__header">
                             <div>
                                 <h2>Distribución NPS</h2>
-                                <p class="small-flexo text-muted">Total de respuestas</p>
+                                <p class="small-flexo text-muted">2.486 respuestas acumuladas</p>
                             </div>
                         </header>
                         <div class="card__body">
-                            <div class="donut-chart" style="--promoters: 68%; --passives: 88%" role="img"
-                                aria-label="68 por ciento promotores, 20 por ciento pasivos y 12 por ciento detractores">
+                            <div class="donut-chart-wrapper">
+                                <div class="donut-chart" style="--promoters: 68%; --passives: 88%" role="img"
+                                    aria-label="68 por ciento promotores, 20 por ciento pasivos y 12 por ciento detractores">
+                                </div>
+                                <div class="donut-center-content" aria-hidden="true">
+                                    <span class="donut-center__score">56</span>
+                                    <span class="donut-center__status">Excelente</span>
+                                    <span class="donut-center__sub">NPS Global</span>
+                                </div>
                             </div>
                             <ul class="chart-legend">
                                 <li class="chart-legend__item">
-                                    <span class="chart-legend__label" style="color: var(--bcp-state-success)">
-                                        <span class="chart-legend__swatch"></span>Promotores
+                                    <span class="chart-legend__label chart-legend__label--promoter">
+                                        <span class="chart-legend__swatch"></span>Promotores (9-10)
                                     </span>
-                                    <strong>68%</strong>
+                                    <strong>68% <span
+                                            class="small-flexo text-muted legend-count">(1.690)</span></strong>
                                 </li>
                                 <li class="chart-legend__item">
-                                    <span class="chart-legend__label" style="color: var(--bcp-state-warning)">
-                                        <span class="chart-legend__swatch"></span>Pasivos
+                                    <span class="chart-legend__label chart-legend__label--passive">
+                                        <span class="chart-legend__swatch"></span>Pasivos (7-8)
                                     </span>
-                                    <strong>20%</strong>
+                                    <strong>20% <span class="small-flexo text-muted legend-count">(497)</span></strong>
                                 </li>
                                 <li class="chart-legend__item">
-                                    <span class="chart-legend__label" style="color: var(--bcp-state-error)">
-                                        <span class="chart-legend__swatch"></span>Detractores
+                                    <span class="chart-legend__label chart-legend__label--detractor">
+                                        <span class="chart-legend__swatch"></span>Detractores (0-6)
                                     </span>
-                                    <strong>12%</strong>
+                                    <strong>12% <span class="small-flexo text-muted legend-count">(299)</span></strong>
                                 </li>
                             </ul>
                         </div>
@@ -207,35 +380,60 @@
                         <header class="card__header">
                             <div>
                                 <h2>Atributos de promotores</h2>
-                                <p class="small-flexo text-muted">Aspectos que impulsan la recomendación</p>
+                                <p class="small-flexo text-muted">Aspectos clave que impulsan la recomendación</p>
                             </div>
                         </header>
                         <div class="card__body attribute-list">
                             <div class="attribute-item">
-                                <div class="attribute-item__header"><span>Facilidad de uso</span><strong>36%</strong>
+                                <div class="attribute-item__header">
+                                    <div class="attribute-item__title-wrap">
+                                        <span class="attribute-tag">Digital</span>
+                                        <span>Facilidad de uso</span>
+                                    </div>
+                                    <strong>36%</strong>
                                 </div>
                                 <div class="attribute-item__track">
-                                    <div class="attribute-item__bar" style="--attribute-value: 36%"></div>
+                                    <div class="attribute-item__bar attribute-item__bar--promoter"
+                                        style="--attribute-value: 36%"></div>
                                 </div>
                             </div>
                             <div class="attribute-item">
-                                <div class="attribute-item__header"><span>Rapidez de atención</span><strong>28%</strong>
+                                <div class="attribute-item__header">
+                                    <div class="attribute-item__title-wrap">
+                                        <span class="attribute-tag">Servicio</span>
+                                        <span>Rapidez de atención</span>
+                                    </div>
+                                    <strong>28%</strong>
                                 </div>
                                 <div class="attribute-item__track">
-                                    <div class="attribute-item__bar" style="--attribute-value: 28%"></div>
+                                    <div class="attribute-item__bar attribute-item__bar--promoter"
+                                        style="--attribute-value: 28%"></div>
                                 </div>
                             </div>
                             <div class="attribute-item">
-                                <div class="attribute-item__header"><span>Buen trato</span><strong>21%</strong></div>
+                                <div class="attribute-item__header">
+                                    <div class="attribute-item__title-wrap">
+                                        <span class="attribute-tag">Personas</span>
+                                        <span>Buen trato y empatía</span>
+                                    </div>
+                                    <strong>21%</strong>
+                                </div>
                                 <div class="attribute-item__track">
-                                    <div class="attribute-item__bar" style="--attribute-value: 21%"></div>
+                                    <div class="attribute-item__bar attribute-item__bar--promoter"
+                                        style="--attribute-value: 21%"></div>
                                 </div>
                             </div>
                             <div class="attribute-item">
-                                <div class="attribute-item__header"><span>Operación segura</span><strong>15%</strong>
+                                <div class="attribute-item__header">
+                                    <div class="attribute-item__title-wrap">
+                                        <span class="attribute-tag">Seguridad</span>
+                                        <span>Operación segura y confiable</span>
+                                    </div>
+                                    <strong>15%</strong>
                                 </div>
                                 <div class="attribute-item__track">
-                                    <div class="attribute-item__bar" style="--attribute-value: 15%"></div>
+                                    <div class="attribute-item__bar attribute-item__bar--promoter"
+                                        style="--attribute-value: 15%"></div>
                                 </div>
                             </div>
                         </div>
@@ -245,36 +443,60 @@
                         <header class="card__header">
                             <div>
                                 <h2>Atributos de detractores</h2>
-                                <p class="small-flexo text-muted">Principales oportunidades de mejora</p>
+                                <p class="small-flexo text-muted">Principales oportunidades de mejora detectadas</p>
                             </div>
                         </header>
                         <div class="card__body attribute-list">
                             <div class="attribute-item">
-                                <div class="attribute-item__header"><span>Operación lenta</span><strong>31%</strong>
+                                <div class="attribute-item__header">
+                                    <div class="attribute-item__title-wrap">
+                                        <span class="attribute-tag attribute-tag--detractor">Canal</span>
+                                        <span>Operación lenta</span>
+                                    </div>
+                                    <strong>31%</strong>
                                 </div>
                                 <div class="attribute-item__track">
-                                    <div class="attribute-item__bar" style="--attribute-value: 31%"></div>
+                                    <div class="attribute-item__bar attribute-item__bar--detractor"
+                                        style="--attribute-value: 31%"></div>
                                 </div>
                             </div>
                             <div class="attribute-item">
-                                <div class="attribute-item__header"><span>Errores del sistema</span><strong>27%</strong>
+                                <div class="attribute-item__header">
+                                    <div class="attribute-item__title-wrap">
+                                        <span class="attribute-tag attribute-tag--detractor">Sistemas</span>
+                                        <span>Errores del aplicativo / cajero</span>
+                                    </div>
+                                    <strong>27%</strong>
                                 </div>
                                 <div class="attribute-item__track">
-                                    <div class="attribute-item__bar" style="--attribute-value: 27%"></div>
+                                    <div class="attribute-item__bar attribute-item__bar--detractor"
+                                        style="--attribute-value: 27%"></div>
                                 </div>
                             </div>
                             <div class="attribute-item">
-                                <div class="attribute-item__header"><span>Tiempo de espera</span><strong>23%</strong>
+                                <div class="attribute-item__header">
+                                    <div class="attribute-item__title-wrap">
+                                        <span class="attribute-tag attribute-tag--detractor">Agencias</span>
+                                        <span>Tiempo excesivo de espera</span>
+                                    </div>
+                                    <strong>23%</strong>
                                 </div>
                                 <div class="attribute-item__track">
-                                    <div class="attribute-item__bar" style="--attribute-value: 23%"></div>
+                                    <div class="attribute-item__bar attribute-item__bar--detractor"
+                                        style="--attribute-value: 23%"></div>
                                 </div>
                             </div>
                             <div class="attribute-item">
-                                <div class="attribute-item__header"><span>Falta de
-                                        información</span><strong>19%</strong></div>
+                                <div class="attribute-item__header">
+                                    <div class="attribute-item__title-wrap">
+                                        <span class="attribute-tag attribute-tag--detractor">Claridad</span>
+                                        <span>Falta de información clara</span>
+                                    </div>
+                                    <strong>19%</strong>
+                                </div>
                                 <div class="attribute-item__track">
-                                    <div class="attribute-item__bar" style="--attribute-value: 19%"></div>
+                                    <div class="attribute-item__bar attribute-item__bar--detractor"
+                                        style="--attribute-value: 19%"></div>
                                 </div>
                             </div>
                         </div>
@@ -285,7 +507,8 @@
                     <div class="section__header">
                         <div>
                             <h2>Desempeño por canal</h2>
-                            <p class="small-flexo text-muted">Comparación del periodo seleccionado</p>
+                            <p class="small-flexo text-muted">Comparación integral de satisfacción y volumen del periodo
+                            </p>
                         </div>
                         <a class="button button--secondary button--small" href="canales.html">Ver todos los canales</a>
                     </div>
@@ -295,6 +518,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Canal</th>
+                                    <th scope="col">Composición visual</th>
                                     <th scope="col">Respuestas</th>
                                     <th scope="col">Promotores</th>
                                     <th scope="col">Pasivos</th>
@@ -304,44 +528,133 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Cajeros automáticos</td>
-                                    <td>612</td>
-                                    <td>66%</td>
-                                    <td>21%</td>
-                                    <td>13%</td>
-                                    <td><strong>53</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>Agentes</td>
-                                    <td>548</td>
-                                    <td>71%</td>
-                                    <td>19%</td>
-                                    <td>10%</td>
-                                    <td><strong>61</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>Banca móvil</td>
+                                    <td>
+                                        <div class="channel-cell">
+                                            <span>Banca móvil</span>
+                                            <span class="channel-tag channel-tag--lead">
+                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"
+                                                    aria-hidden="true">
+                                                    <polygon
+                                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                                </svg>
+                                                Líder
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="stacked-bar"
+                                            title="Promotores: 73% | Pasivos: 18% | Detractores: 9%"
+                                            aria-label="Promotores 73%, Pasivos 18%, Detractores 9%">
+                                            <span class="stacked-bar__seg stacked-bar__seg--promoter"
+                                                style="width: 73%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--passive"
+                                                style="width: 18%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--detractor"
+                                                style="width: 9%"></span>
+                                        </div>
+                                    </td>
                                     <td>824</td>
                                     <td>73%</td>
                                     <td>18%</td>
                                     <td>9%</td>
-                                    <td><strong>64</strong></td>
+                                    <td><span class="nps-badge-pill nps-badge-pill--high">64</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Plataforma</td>
+                                    <td>
+                                        <div class="channel-cell">
+                                            <span>Agentes</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="stacked-bar"
+                                            title="Promotores: 71% | Pasivos: 19% | Detractores: 10%"
+                                            aria-label="Promotores 71%, Pasivos 19%, Detractores 10%">
+                                            <span class="stacked-bar__seg stacked-bar__seg--promoter"
+                                                style="width: 71%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--passive"
+                                                style="width: 19%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--detractor"
+                                                style="width: 10%"></span>
+                                        </div>
+                                    </td>
+                                    <td>548</td>
+                                    <td>71%</td>
+                                    <td>19%</td>
+                                    <td>10%</td>
+                                    <td><span class="nps-badge-pill nps-badge-pill--high">61</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="channel-cell">
+                                            <span>Cajeros automáticos</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="stacked-bar"
+                                            title="Promotores: 66% | Pasivos: 21% | Detractores: 13%"
+                                            aria-label="Promotores 66%, Pasivos 21%, Detractores 13%">
+                                            <span class="stacked-bar__seg stacked-bar__seg--promoter"
+                                                style="width: 66%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--passive"
+                                                style="width: 21%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--detractor"
+                                                style="width: 13%"></span>
+                                        </div>
+                                    </td>
+                                    <td>612</td>
+                                    <td>66%</td>
+                                    <td>21%</td>
+                                    <td>13%</td>
+                                    <td><span class="nps-badge-pill nps-badge-pill--mid">53</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="channel-cell">
+                                            <span>Plataforma</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="stacked-bar"
+                                            title="Promotores: 61% | Pasivos: 23% | Detractores: 16%"
+                                            aria-label="Promotores 61%, Pasivos 23%, Detractores 16%">
+                                            <span class="stacked-bar__seg stacked-bar__seg--promoter"
+                                                style="width: 61%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--passive"
+                                                style="width: 23%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--detractor"
+                                                style="width: 16%"></span>
+                                        </div>
+                                    </td>
                                     <td>296</td>
                                     <td>61%</td>
                                     <td>23%</td>
                                     <td>16%</td>
-                                    <td><strong>45</strong></td>
+                                    <td><span class="nps-badge-pill nps-badge-pill--warning">45</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Ventanilla</td>
+                                    <td>
+                                        <div class="channel-cell">
+                                            <span>Ventanilla</span>
+                                            <span class="channel-tag channel-tag--opp">Oportunidad</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="stacked-bar"
+                                            title="Promotores: 59% | Pasivos: 25% | Detractores: 16%"
+                                            aria-label="Promotores 59%, Pasivos 25%, Detractores 16%">
+                                            <span class="stacked-bar__seg stacked-bar__seg--promoter"
+                                                style="width: 59%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--passive"
+                                                style="width: 25%"></span>
+                                            <span class="stacked-bar__seg stacked-bar__seg--detractor"
+                                                style="width: 16%"></span>
+                                        </div>
+                                    </td>
                                     <td>206</td>
                                     <td>59%</td>
                                     <td>25%</td>
                                     <td>16%</td>
-                                    <td><strong>43</strong></td>
+                                    <td><span class="nps-badge-pill nps-badge-pill--warning">43</span></td>
                                 </tr>
                             </tbody>
                         </table>

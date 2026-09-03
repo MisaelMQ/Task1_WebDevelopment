@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Acceso al sistema de seguimiento NPS multicanal.">
+    <title>Iniciar sesión | CX Insight</title>
+    <link rel="icon" href="assets/img/logo/favicon-orange-whit-blue.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <main class="login-page">
+        <section class="login-panel" aria-labelledby="login-title">
+            <div class="login-card">
+                <img class="login-card__logo" src="assets/img/logo/logo-blue-whit-whitebg-bo.svg"
+                    alt="Logo institucional">
+
+                <header class="login-card__header">
+                    <h1 id="login-title">Iniciar sesión</h1>
+                    <p class="text-muted">Ingresa tus datos para acceder al seguimiento de CX.</p>
+                </header>
+
+                <form class="login-card__form" action="pages/dashboard.html" method="get">
+                    <div class="form-field">
+                        <label class="form-label" for="usuario">Usuario</label>
+                        <input class="form-control" id="usuario" name="usuario" type="text"
+                            placeholder="Ingresa tu usuario" autocomplete="username" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="contrasena">Contraseña</label>
+                        <input class="form-control" id="contrasena" name="contrasena" type="password"
+                            placeholder="Ingresa tu contraseña" autocomplete="current-password" required>
+                        <span class="form-help">Utiliza cualquier dato para ingresar a esta demostración.</span>
+                    </div>
+
+                    <button class="button button--primary button--block" type="submit">
+                        Ingresar
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <aside class="login-visual" aria-label="Descripción del sistema">
+            <div class="login-visual__content stack-16">
+                <p class="small-flexo text-demi">CX - EXPERIENCIA AL CLIENTE</p>
+                <h2>Seguimiento NPS</h2>
+                <p>
+                    Consulta la evolución semanal de los canales e identifica los atributos
+                    que impulsan o afectan la recomendación.
+                </p>
+            </div>
+        </aside>
+    </main>
+</body>
+
+</html>

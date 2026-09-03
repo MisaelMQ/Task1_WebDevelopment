@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Listado de respuestas NPS vinculadas a los canales.">
+    <title>Encuestas | CX Insight</title>
+    <link rel="icon" href="../assets/img/logo/favicon-orange-whit-blue.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="navbar">
+            <div class="container navbar__inner">
+                <a class="navbar__brand" href="dashboard.html" aria-label="Ir al dashboard">
+                    <img class="navbar__logo" src="../assets/img/logo/logo-white-with-bluebg-bo.svg"
+                        alt="Logo institucional">
+                </a>
+                <nav aria-label="Navegación principal">
+                    <ul class="navbar__nav">
+                        <li><a class="navbar__link" href="dashboard.html">Dashboard</a></li>
+                        <li><a class="navbar__link" href="canales.html">Canales</a></li>
+                        <li><a class="navbar__link" href="encuestas.html" aria-current="page">Encuestas</a></li>
+                    </ul>
+                </nav>
+                <div class="navbar__profile">
+                    <div>
+                        <p class="small-flexo text-demi">María López</p>
+                        <p class="extra-small-flexo">Analista CX</p>
+                    </div>
+                    <span class="navbar__avatar" aria-hidden="true">ML</span>
+                    <a class="navbar__link" href="../index.html">Salir</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-main">
+            <div class="container">
+                <nav aria-label="Ruta de navegación">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="text-breadcrumb-link" href="dashboard.html">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item" aria-current="page">Encuestas</li>
+                    </ol>
+                </nav>
+
+                <header class="page-header">
+                    <div class="page-header__content">
+                        <h1>Encuestas</h1>
+                        <p class="text-muted">Consulta las respuestas relacionadas con cada canal.</p>
+                    </div>
+                    <a class="button button--primary" href="registrar-encuesta.html">Registrar encuesta</a>
+                </header>
+
+                <form class="records-toolbar surface" action="encuestas.html" method="get">
+                    <div class="form-field">
+                        <label class="form-label" for="buscar-encuesta">Buscar respuesta</label>
+                        <input class="form-control" id="buscar-encuesta" name="buscar" type="search"
+                            placeholder="Código, atributo o comentario">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="filtro-canal">Canal</label>
+                        <select class="form-select" id="filtro-canal" name="canal">
+                            <option value="todos" selected>Todos</option>
+                            <option value="atm">Cajeros automáticos</option>
+                            <option value="agentes">Agentes</option>
+                            <option value="banca-movil">Banca móvil</option>
+                            <option value="plataforma">Plataforma</option>
+                            <option value="ventanilla">Ventanilla</option>
+                        </select>
+                    </div>
+                    <button class="button button--secondary" type="submit">Filtrar</button>
+                </form>
+
+                <div class="outline-tabs" role="tablist" aria-label="Filtrar por segmento NPS">
+                    <button class="outline-tab" type="button" role="tab" aria-selected="true">Todos</button>
+                    <button class="outline-tab" type="button" role="tab" aria-selected="false">Promotores</button>
+                    <button class="outline-tab" type="button" role="tab" aria-selected="false">Pasivos</button>
+                    <button class="outline-tab" type="button" role="tab" aria-selected="false">Detractores</button>
+                </div>
+
+                <div class="records-summary bcp-mt-16">
+                    <p class="records-count">2.486 respuestas registradas</p>
+                    <p class="small-flexo text-muted">Mostrando 8 registros de ejemplo</p>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Semana</th>
+                                <th scope="col">Canal</th>
+                                <th scope="col">Puntuación</th>
+                                <th scope="col">Segmento</th>
+                                <th scope="col">Atributo</th>
+                                <th scope="col">Comentario</th>
+                                <th scope="col">Origen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ENC-2486</td>
+                                <td>30/08/2026</td>
+                                <td>S4</td>
+                                <td>Banca móvil</td>
+                                <td>10</td>
+                                <td><span class="status-badge status-badge--promoter">Promotor</span></td>
+                                <td>Operación rápida</td>
+                                <td>La transferencia se realizó sin demoras.</td>
+                                <td>Encuesta digital</td>
+                            </tr>
+                            <tr>
+                                <td>ENC-2485</td>
+                                <td>30/08/2026</td>
+                                <td>S4</td>
+                                <td>Cajeros automáticos</td>
+                                <td>4</td>
+                                <td><span class="status-badge status-badge--detractor">Detractor</span></td>
+                                <td>Fuera de servicio</td>
+                                <td>El primer cajero que visité no estaba disponible.</td>
+                                <td>Encuesta digital</td>
+                            </tr>
+                            <tr>
+                                <td>ENC-2484</td>
+                                <td>29/08/2026</td>
+                                <td>S4</td>
+                                <td>Agentes</td>
+                                <td>9</td>
+                                <td><span class="status-badge status-badge--promoter">Promotor</span></td>
+                                <td>Buen trato</td>
+                                <td>La atención fue amable y clara.</td>
+                                <td>Encuestadoras</td>
+                            </tr>
+                            <tr>
+                                <td>ENC-2483</td>
+                                <td>29/08/2026</td>
+                                <td>S4</td>
+                                <td>Plataforma</td>
+                                <td>7</td>
+                                <td><span class="status-badge status-badge--passive">Pasivo</span></td>
+                                <td>Tiempo de espera</td>
+                                <td>El trámite fue correcto, pero tomó más tiempo del esperado.</td>
+                                <td>Encuestadoras</td>
+                            </tr>
+                            <tr>
+                                <td>ENC-2482</td>
+                                <td>28/08/2026</td>
+                                <td>S4</td>
+                                <td>Ventanilla</td>
+                                <td>3</td>
+                                <td><span class="status-badge status-badge--detractor">Detractor</span></td>
+                                <td>Fila extensa</td>
+                                <td>Esperé demasiado para realizar la operación.</td>
+                                <td>Encuestadoras</td>
+                            </tr>
+                            <tr>
+                                <td>ENC-2481</td>
+                                <td>28/08/2026</td>
+                                <td>S4</td>
+                                <td>Tarjeta prepago</td>
+                                <td>8</td>
+                                <td><span class="status-badge status-badge--passive">Pasivo</span></td>
+                                <td>Información clara</td>
+                                <td>El proceso fue sencillo, aunque faltó una confirmación final.</td>
+                                <td>Encuesta digital</td>
+                            </tr>
+                            <tr>
+                                <td>ENC-2480</td>
+                                <td>27/08/2026</td>
+                                <td>S4</td>
+                                <td>Billetera móvil</td>
+                                <td>10</td>
+                                <td><span class="status-badge status-badge--promoter">Promotor</span></td>
+                                <td>Facilidad de uso</td>
+                                <td>Pude completar el pago rápidamente.</td>
+                                <td>Encuesta digital</td>
+                            </tr>
+                            <tr>
+                                <td>ENC-2479</td>
+                                <td>27/08/2026</td>
+                                <td>S4</td>
+                                <td>Microcréditos</td>
+                                <td>5</td>
+                                <td><span class="status-badge status-badge--detractor">Detractor</span></td>
+                                <td>Falta de información</td>
+                                <td>No comprendí todos los requisitos del proceso.</td>
+                                <td>Encuestadoras</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <nav aria-label="Paginación">
+                    <ul class="pagination">
+                        <li><a class="pagination__link" href="#" aria-label="Página anterior">‹</a></li>
+                        <li><a class="pagination__link" href="#" aria-current="page">1</a></li>
+                        <li><a class="pagination__link" href="#">2</a></li>
+                        <li><a class="pagination__link" href="#">3</a></li>
+                        <li><a class="pagination__link" href="#" aria-label="Página siguiente">›</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+
+        <footer class="footer footer--slim">
+            <div class="container footer__inner">
+                <p class="small-flexo">CX Insight · Demostración académica</p>
+                <ul class="footer__links">
+                    <li><a class="footer__link" href="dashboard.html">Inicio</a></li>
+                    <li><a class="footer__link" href="canales.html">Canales</a></li>
+                    <li><a class="footer__link" href="encuestas.html">Encuestas</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

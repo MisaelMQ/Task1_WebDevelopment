@@ -57,24 +57,33 @@
                 <form class="records-toolbar surface" action="encuestas.html" method="get">
                     <div class="form-field">
                         <label class="form-label" for="buscar-encuesta">Buscar respuesta</label>
-                        <input class="form-control" id="buscar-encuesta" name="buscar" type="search"
-                            placeholder="Código, atributo o comentario">
+                        <div class="search-field">
+                            <svg class="search-field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>
+                            <input class="form-control" id="buscar-encuesta" name="buscar" type="search"
+                                placeholder="Código, etiqueta o comentario...">
+                        </div>
                     </div>
                     <div class="form-field">
                         <label class="form-label" for="filtro-canal">Canal</label>
                         <select class="form-select" id="filtro-canal" name="canal">
-                            <option value="todos" selected>Todos</option>
-                            <option value="atm">Cajeros automáticos</option>
-                            <option value="agentes">Agentes</option>
-                            <option value="banca-movil">Banca móvil</option>
+                            <option value="todos" selected>Todos los canales</option>
+                            <option value="cajeros-automaticos">Cajeros Automáticos</option>
+                            <option value="agentes-bcp">Agentes BCP</option>
+                            <option value="banca-movil">Banca Móvil</option>
                             <option value="plataforma">Plataforma</option>
                             <option value="ventanilla">Ventanilla</option>
+                            <option value="tarjeta-prepago">Tarjeta Prepago</option>
+                            <option value="microcreditos">Microcréditos</option>
                         </select>
                     </div>
                     <button class="button button--secondary" type="submit">Filtrar</button>
                 </form>
 
-                <div class="outline-tabs" role="tablist" aria-label="Filtrar por segmento NPS">
+                <div class="outline-tabs" role="tablist" aria-label="Filtrar por ET_NPS">
                     <button class="outline-tab" type="button" role="tab" aria-selected="true">Todos</button>
                     <button class="outline-tab" type="button" role="tab" aria-selected="false">Promotores</button>
                     <button class="outline-tab" type="button" role="tab" aria-selected="false">Pasivos</button>
@@ -94,9 +103,9 @@
                                 <th scope="col">Fecha</th>
                                 <th scope="col">Semana</th>
                                 <th scope="col">Canal</th>
-                                <th scope="col">Puntuación</th>
-                                <th scope="col">Segmento</th>
-                                <th scope="col">Atributo</th>
+                                <th scope="col">NPS</th>
+                                <th scope="col">ET_NPS</th>
+                                <th scope="col">Etiqueta</th>
                                 <th scope="col">Comentario</th>
                                 <th scope="col">Origen</th>
                             </tr>
@@ -105,90 +114,90 @@
                             <tr>
                                 <td>ENC-2486</td>
                                 <td>30/08/2026</td>
-                                <td>S4</td>
-                                <td>Banca móvil</td>
-                                <td>10</td>
+                                <td>S4-Ago</td>
+                                <td>Banca Móvil</td>
+                                <td><strong>10</strong></td>
                                 <td><span class="status-badge status-badge--promoter">Promotor</span></td>
                                 <td>Operación rápida</td>
                                 <td>La transferencia se realizó sin demoras.</td>
-                                <td>Encuesta digital</td>
+                                <td><span class="source-tag source-tag--clevertap">CleverTap</span></td>
                             </tr>
                             <tr>
                                 <td>ENC-2485</td>
                                 <td>30/08/2026</td>
-                                <td>S4</td>
-                                <td>Cajeros automáticos</td>
-                                <td>4</td>
+                                <td>S4-Ago</td>
+                                <td>Cajeros Automáticos</td>
+                                <td><strong>4</strong></td>
                                 <td><span class="status-badge status-badge--detractor">Detractor</span></td>
                                 <td>Fuera de servicio</td>
                                 <td>El primer cajero que visité no estaba disponible.</td>
-                                <td>Encuesta digital</td>
+                                <td><span class="source-tag source-tag--ai">Agente IA</span></td>
                             </tr>
                             <tr>
                                 <td>ENC-2484</td>
                                 <td>29/08/2026</td>
-                                <td>S4</td>
-                                <td>Agentes</td>
-                                <td>9</td>
+                                <td>S4-Ago</td>
+                                <td>Agentes BCP</td>
+                                <td><strong>9</strong></td>
                                 <td><span class="status-badge status-badge--promoter">Promotor</span></td>
                                 <td>Buen trato</td>
                                 <td>La atención fue amable y clara.</td>
-                                <td>Encuestadoras</td>
+                                <td><span class="source-tag source-tag--ai">Agente IA</span></td>
                             </tr>
                             <tr>
                                 <td>ENC-2483</td>
                                 <td>29/08/2026</td>
-                                <td>S4</td>
+                                <td>S4-Ago</td>
                                 <td>Plataforma</td>
-                                <td>7</td>
+                                <td><strong>7</strong></td>
                                 <td><span class="status-badge status-badge--passive">Pasivo</span></td>
                                 <td>Tiempo de espera</td>
                                 <td>El trámite fue correcto, pero tomó más tiempo del esperado.</td>
-                                <td>Encuestadoras</td>
+                                <td><span class="source-tag source-tag--qr">Encuesta QR</span></td>
                             </tr>
                             <tr>
                                 <td>ENC-2482</td>
                                 <td>28/08/2026</td>
-                                <td>S4</td>
+                                <td>S4-Ago</td>
                                 <td>Ventanilla</td>
-                                <td>3</td>
+                                <td><strong>3</strong></td>
                                 <td><span class="status-badge status-badge--detractor">Detractor</span></td>
                                 <td>Fila extensa</td>
                                 <td>Esperé demasiado para realizar la operación.</td>
-                                <td>Encuestadoras</td>
+                                <td><span class="source-tag source-tag--qr">Encuesta QR</span></td>
                             </tr>
                             <tr>
                                 <td>ENC-2481</td>
                                 <td>28/08/2026</td>
-                                <td>S4</td>
-                                <td>Tarjeta prepago</td>
-                                <td>8</td>
+                                <td>S4-Ago</td>
+                                <td>Tarjeta Prepago</td>
+                                <td><strong>8</strong></td>
                                 <td><span class="status-badge status-badge--passive">Pasivo</span></td>
                                 <td>Información clara</td>
                                 <td>El proceso fue sencillo, aunque faltó una confirmación final.</td>
-                                <td>Encuesta digital</td>
+                                <td><span class="source-tag source-tag--clevertap">CleverTap</span></td>
                             </tr>
                             <tr>
                                 <td>ENC-2480</td>
                                 <td>27/08/2026</td>
-                                <td>S4</td>
-                                <td>Billetera móvil</td>
-                                <td>10</td>
+                                <td>S4-Ago</td>
+                                <td>Banca Móvil</td>
+                                <td><strong>10</strong></td>
                                 <td><span class="status-badge status-badge--promoter">Promotor</span></td>
                                 <td>Facilidad de uso</td>
                                 <td>Pude completar el pago rápidamente.</td>
-                                <td>Encuesta digital</td>
+                                <td><span class="source-tag source-tag--clevertap">CleverTap</span></td>
                             </tr>
                             <tr>
                                 <td>ENC-2479</td>
                                 <td>27/08/2026</td>
-                                <td>S4</td>
+                                <td>S4-Ago</td>
                                 <td>Microcréditos</td>
-                                <td>5</td>
+                                <td><strong>5</strong></td>
                                 <td><span class="status-badge status-badge--detractor">Detractor</span></td>
                                 <td>Falta de información</td>
                                 <td>No comprendí todos los requisitos del proceso.</td>
-                                <td>Encuestadoras</td>
+                                <td><span class="source-tag source-tag--traditional">Encuestadoras</span></td>
                             </tr>
                         </tbody>
                     </table>

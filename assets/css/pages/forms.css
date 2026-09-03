@@ -78,6 +78,20 @@
   color: var(--bcp-color-blue);
 }
 
+fieldset.form-field {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+fieldset.form-field legend {
+  float: left;
+  width: 100%;
+  margin-bottom: var(--bcp-space-8);
+  padding: 0;
+}
+
 /* Enhanced radio button choice cards for status */
 .choice-card-group {
   display: grid;
@@ -125,19 +139,64 @@
   color: var(--bcp-text-dark-700);
 }
 
-.choice-card:has(input[value="activo"]:checked) {
+.choice-card-group--three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--bcp-space-12);
+}
+
+@media (max-width: 640px) {
+  .choice-card-group--three {
+    grid-template-columns: 1fr;
+  }
+}
+
+.choice-card:has(input[value="activo"]:checked),
+.choice-card:has(input[value="promotor"]:checked) {
   border-color: var(--bcp-state-success);
   background: var(--bcp-state-success-soft);
 }
 
-.choice-card:has(input[value="activo"]:checked) .choice-card__indicator {
+.choice-card:has(input[value="activo"]:checked) .choice-card__indicator,
+.choice-card:has(input[value="promotor"]:checked) .choice-card__indicator {
   background: var(--bcp-state-success);
   transform: scale(1.2);
   box-shadow: 0 0 0 3px rgb(36 138 90 / 20%);
 }
 
-.choice-card:has(input[value="activo"]:checked) .choice-card__label {
+.choice-card:has(input[value="activo"]:checked) .choice-card__label,
+.choice-card:has(input[value="promotor"]:checked) .choice-card__label {
   color: var(--bcp-state-success);
+}
+
+.choice-card:has(input[value="pasivo"]:checked) {
+  border-color: var(--bcp-state-warning);
+  background: var(--bcp-state-warning-soft);
+}
+
+.choice-card:has(input[value="pasivo"]:checked) .choice-card__indicator {
+  background: var(--bcp-state-warning);
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(173, 104, 0, 0.2);
+}
+
+.choice-card:has(input[value="pasivo"]:checked) .choice-card__label {
+  color: var(--bcp-state-warning);
+}
+
+.choice-card:has(input[value="detractor"]:checked) {
+  border-color: var(--bcp-state-error);
+  background: var(--bcp-state-error-soft);
+}
+
+.choice-card:has(input[value="detractor"]:checked) .choice-card__indicator {
+  background: var(--bcp-state-error);
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(201, 54, 43, 0.2);
+}
+
+.choice-card:has(input[value="detractor"]:checked) .choice-card__label {
+  color: var(--bcp-state-error);
 }
 
 .choice-card:has(input[value="inactivo"]:checked) {

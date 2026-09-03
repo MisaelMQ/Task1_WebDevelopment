@@ -73,7 +73,16 @@
                 <form class="card form-card" action="encuestas.html" method="get">
                     <section class="form-section" aria-labelledby="identificacion-title">
                         <header class="form-section__header">
-                            <h2 id="identificacion-title">Identificación</h2>
+                            <h2 class="form-section__title" id="identificacion-title">
+                                <span class="form-section__icon" aria-hidden="true">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 20h9" />
+                                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                                    </svg>
+                                </span>
+                                Identificación
+                            </h2>
                             <p class="small-flexo text-muted">Los campos con asterisco son obligatorios.</p>
                         </header>
 
@@ -96,13 +105,12 @@
                                         class="form-label__required">*</span></label>
                                 <select class="form-select" id="canal-encuesta" name="canal" required>
                                     <option value="" selected disabled>Selecciona un canal</option>
-                                    <option value="atm">Cajeros automáticos</option>
-                                    <option value="agentes">Agentes</option>
-                                    <option value="banca-movil">Banca móvil</option>
+                                    <option value="cajeros-automaticos">Cajeros Automáticos</option>
+                                    <option value="agentes-bcp">Agentes BCP</option>
+                                    <option value="banca-movil">Banca Móvil</option>
                                     <option value="plataforma">Plataforma</option>
                                     <option value="ventanilla">Ventanilla</option>
-                                    <option value="billetera-movil">Billetera móvil</option>
-                                    <option value="tarjeta-prepago">Tarjeta prepago</option>
+                                    <option value="tarjeta-prepago">Tarjeta Prepago</option>
                                     <option value="microcreditos">Microcréditos</option>
                                 </select>
                                 <span class="form-help">La encuesta quedará vinculada al canal seleccionado.</span>
@@ -113,9 +121,11 @@
                                         class="form-label__required">*</span></label>
                                 <select class="form-select" id="origen-encuesta" name="origen" required>
                                     <option value="" selected disabled>Selecciona una opción</option>
-                                    <option value="encuestadoras">Encuestadoras</option>
-                                    <option value="encuesta-digital">Encuesta digital</option>
-                                    <option value="carga-manual">Carga manual</option>
+                                    <option value="Agente IA">Agente IA</option>
+                                    <option value="CleverTap">CleverTap</option>
+                                    <option value="Encuesta QR">Encuesta QR</option>
+                                    <option value="Encuestadoras">Encuestadoras</option>
+                                    <option value="Carga manual">Carga manual</option>
                                 </select>
                             </div>
                         </div>
@@ -123,13 +133,23 @@
 
                     <section class="form-section" aria-labelledby="resultado-title">
                         <header class="form-section__header">
-                            <h2 id="resultado-title">Resultado NPS</h2>
-                            <p class="small-flexo text-muted">Registra la puntuación y el segmento correspondiente.</p>
+                            <h2 class="form-section__title" id="resultado-title">
+                                <span class="form-section__icon" aria-hidden="true">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg>
+                                </span>
+                                Resultado NPS
+                            </h2>
+                            <p class="small-flexo text-muted">Registra el puntaje NPS y la clasificación ET_NPS
+                                correspondiente.</p>
                         </header>
 
                         <div class="form-grid">
                             <div class="form-field">
-                                <label class="form-label" for="puntuacion-encuesta">Puntuación <span
+                                <label class="form-label" for="puntuacion-encuesta">NPS <span
                                         class="form-label__required">*</span></label>
                                 <select class="form-select" id="puntuacion-encuesta" name="puntuacion" required>
                                     <option value="" selected disabled>Selecciona de 0 a 10</option>
@@ -147,31 +167,45 @@
                                 </select>
                             </div>
 
-                            <fieldset class="form-field">
-                                <legend class="form-label">Segmento NPS <span class="form-label__required">*</span>
+                            <div class="form-field">
+                                <label class="form-label" for="semana-encuesta">Semana <span
+                                        class="form-label__required">*</span></label>
+                                <select class="form-select" id="semana-encuesta" name="semana" required>
+                                    <option value="" selected disabled>Selecciona una semana</option>
+                                    <option value="S4-Ago">S4-Ago (Semana 4 - Agosto)</option>
+                                    <option value="S3-Ago">S3-Ago (Semana 3 - Agosto)</option>
+                                    <option value="S2-Ago">S2-Ago (Semana 2 - Agosto)</option>
+                                    <option value="S1-Ago">S1-Ago (Semana 1 - Agosto)</option>
+                                </select>
+                            </div>
+
+                            <fieldset class="form-field form-grid__full">
+                                <legend class="form-label">ET_NPS <span class="form-label__required">*</span>
                                 </legend>
-                                <div class="cluster-16">
-                                    <label class="choice">
-                                        <input class="choice__control" type="radio" name="segmento" value="promotor"
-                                            required>
-                                        <span>Promotor</span>
+                                <div class="choice-card-group choice-card-group--three">
+                                    <label class="choice-card">
+                                        <input type="radio" name="segmento" value="promotor" required>
+                                        <span class="choice-card__indicator" aria-hidden="true"></span>
+                                        <span class="choice-card__label">Promotor</span>
                                     </label>
-                                    <label class="choice">
-                                        <input class="choice__control" type="radio" name="segmento" value="pasivo">
-                                        <span>Pasivo</span>
+                                    <label class="choice-card">
+                                        <input type="radio" name="segmento" value="pasivo">
+                                        <span class="choice-card__indicator" aria-hidden="true"></span>
+                                        <span class="choice-card__label">Pasivo</span>
                                     </label>
-                                    <label class="choice">
-                                        <input class="choice__control" type="radio" name="segmento" value="detractor">
-                                        <span>Detractor</span>
+                                    <label class="choice-card">
+                                        <input type="radio" name="segmento" value="detractor">
+                                        <span class="choice-card__indicator" aria-hidden="true"></span>
+                                        <span class="choice-card__label">Detractor</span>
                                     </label>
                                 </div>
                             </fieldset>
 
-                            <div class="form-field">
-                                <label class="form-label" for="atributo-encuesta">Atributo principal <span
+                            <div class="form-field form-grid__full">
+                                <label class="form-label" for="atributo-encuesta">Etiqueta <span
                                         class="form-label__required">*</span></label>
                                 <select class="form-select" id="atributo-encuesta" name="atributo" required>
-                                    <option value="" selected disabled>Selecciona un atributo</option>
+                                    <option value="" selected disabled>Selecciona una etiqueta</option>
                                     <option value="facilidad-uso">Facilidad de uso</option>
                                     <option value="operacion-rapida">Operación rápida</option>
                                     <option value="buen-trato">Buen trato</option>
@@ -181,18 +215,6 @@
                                     <option value="tiempo-espera">Tiempo de espera</option>
                                     <option value="falta-informacion">Falta de información</option>
                                     <option value="otro">Otro</option>
-                                </select>
-                            </div>
-
-                            <div class="form-field">
-                                <label class="form-label" for="semana-encuesta">Semana <span
-                                        class="form-label__required">*</span></label>
-                                <select class="form-select" id="semana-encuesta" name="semana" required>
-                                    <option value="" selected disabled>Selecciona una semana</option>
-                                    <option value="s1">Semana 1</option>
-                                    <option value="s2">Semana 2</option>
-                                    <option value="s3">Semana 3</option>
-                                    <option value="s4">Semana 4</option>
                                 </select>
                             </div>
 

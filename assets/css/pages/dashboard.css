@@ -1,0 +1,124 @@
+.dashboard-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  align-items: end;
+  gap: var(--bcp-space-16);
+  margin-bottom: var(--bcp-space-24);
+  padding: var(--bcp-space-20);
+}
+
+.chart-card {
+  min-height: 21rem;
+}
+
+.chart-area {
+  display: flex;
+  align-items: flex-end;
+  min-height: 14rem;
+  gap: var(--bcp-space-16);
+  padding-top: var(--bcp-space-24);
+  border-bottom: 1px solid var(--bcp-border-color);
+}
+
+.chart-bar-group {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: var(--bcp-space-4);
+  height: 12rem;
+}
+
+.chart-bar {
+  min-height: 0.25rem;
+  height: var(--bar-height, 0%);
+  border-radius: var(--bcp-border-radius-4) var(--bcp-border-radius-4) 0 0;
+  background: var(--bcp-color-blue);
+}
+
+.chart-bar--orange {
+  background: var(--bcp-color-orange);
+}
+
+.chart-bar--muted {
+  background: var(--bcp-border-color-strong);
+}
+
+.donut-chart {
+  position: relative;
+  width: 11rem;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--bcp-state-success) 0 var(--promoters, 55%),
+    var(--bcp-state-warning) var(--promoters, 55%) var(--passives, 78%),
+    var(--bcp-state-error) var(--passives, 78%) 100%
+  );
+}
+
+.donut-chart::after {
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  background: var(--bcp-color-white);
+  content: "";
+}
+
+.chart-legend {
+  display: grid;
+  gap: var(--bcp-space-8);
+  margin-top: var(--bcp-space-20);
+}
+
+.chart-legend__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bcp-space-12);
+}
+
+.chart-legend__label {
+  display: flex;
+  align-items: center;
+  gap: var(--bcp-space-8);
+}
+
+.chart-legend__swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--bcp-border-radius-4);
+  background: currentColor;
+}
+
+.attribute-list {
+  display: grid;
+  gap: var(--bcp-space-16);
+}
+
+.attribute-item {
+  display: grid;
+  gap: var(--bcp-space-6);
+}
+
+.attribute-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bcp-space-12);
+  font-size: var(--bcp-font-size-small);
+}
+
+.attribute-item__track {
+  height: 0.5rem;
+  overflow: hidden;
+  border-radius: var(--bcp-border-radius-full);
+  background: var(--bcp-color-blue-100);
+}
+
+.attribute-item__bar {
+  width: var(--attribute-value, 0%);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--bcp-color-orange);
+}

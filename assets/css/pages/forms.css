@@ -1,0 +1,35 @@
+.form-card {
+  padding: var(--bcp-space-24);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bcp-space-20) var(--bcp-space-24);
+}
+
+.form-grid__full {
+  grid-column: 1 / -1;
+}
+
+.form-section + .form-section {
+  margin-top: var(--bcp-space-32);
+  padding-top: var(--bcp-space-32);
+  border-top: 1px solid var(--bcp-border-color);
+}
+
+.form-section__header {
+  display: grid;
+  gap: var(--bcp-space-4);
+  margin-bottom: var(--bcp-space-20);
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--bcp-space-12);
+  margin-top: var(--bcp-space-32);
+  padding-top: var(--bcp-space-24);
+  border-top: 1px solid var(--bcp-border-color);
+}

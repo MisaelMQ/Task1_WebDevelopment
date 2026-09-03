@@ -49,52 +49,65 @@
                 <header class="page-header">
                     <div class="page-header__content">
                         <h1>Encuestas</h1>
-                        <p class="text-muted">Consulta las respuestas relacionadas con cada canal.</p>
+                        <p class="text-muted">Consulta y filtra las respuestas del NPS transaccional por canal y segmento.</p>
                     </div>
-                    <a class="button button--primary" href="registrar-encuesta.html">Registrar encuesta</a>
+                    <a class="button button--primary" href="registrar-encuesta.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Registrar encuesta
+                    </a>
                 </header>
 
-                <form class="records-toolbar surface" action="encuestas.html" method="get">
-                    <div class="form-field">
-                        <label class="form-label" for="buscar-encuesta">Buscar respuesta</label>
-                        <div class="search-field">
-                            <svg class="search-field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg>
-                            <input class="form-control" id="buscar-encuesta" name="buscar" type="search"
-                                placeholder="Código, etiqueta o comentario...">
+                <!-- Search and filtering toolbar -->
+                <div class="records-toolbar">
+                    <form class="records-toolbar__main" action="encuestas.html" method="get">
+                        <div class="form-field">
+                            <label class="form-label" for="buscar-encuesta">Buscar respuesta</label>
+                            <div class="search-field">
+                                <svg class="search-field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                                <input class="form-control" id="buscar-encuesta" name="buscar" type="search"
+                                    placeholder="Código, etiqueta o comentario...">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-field">
-                        <label class="form-label" for="filtro-canal">Canal</label>
-                        <select class="form-select" id="filtro-canal" name="canal">
-                            <option value="todos" selected>Todos los canales</option>
-                            <option value="cajeros-automaticos">Cajeros Automáticos</option>
-                            <option value="agentes-bcp">Agentes BCP</option>
-                            <option value="banca-movil">Banca Móvil</option>
-                            <option value="plataforma">Plataforma</option>
-                            <option value="ventanilla">Ventanilla</option>
-                            <option value="tarjeta-prepago">Tarjeta Prepago</option>
-                            <option value="microcreditos">Microcréditos</option>
-                        </select>
-                    </div>
-                    <button class="button button--secondary" type="submit">Filtrar</button>
-                </form>
+                        <div class="form-field">
+                            <label class="form-label" for="filtro-canal">Canal</label>
+                            <select class="form-select" id="filtro-canal" name="canal">
+                                <option value="todos" selected>Todos los canales</option>
+                                <option value="cajeros-automaticos">Cajeros Automáticos</option>
+                                <option value="agentes-bcp">Agentes BCP</option>
+                                <option value="banca-movil">Banca Móvil</option>
+                                <option value="plataforma">Plataforma</option>
+                                <option value="ventanilla">Ventanilla</option>
+                                <option value="tarjeta-prepago">Tarjeta Prepago</option>
+                                <option value="microcreditos">Microcréditos</option>
+                            </select>
+                        </div>
+                        <button class="button button--secondary" type="submit">Filtrar</button>
+                    </form>
 
-                <div class="outline-tabs" role="tablist" aria-label="Filtrar por ET_NPS">
-                    <button class="outline-tab" type="button" role="tab" aria-selected="true">Todos</button>
-                    <button class="outline-tab" type="button" role="tab" aria-selected="false">Promotores</button>
-                    <button class="outline-tab" type="button" role="tab" aria-selected="false">Pasivos</button>
-                    <button class="outline-tab" type="button" role="tab" aria-selected="false">Detractores</button>
+                    <!-- Quick filter preset chips by ET_NPS -->
+                    <div class="records-chips">
+                        <span class="records-chips__label">Segmento ET_NPS:</span>
+                        <a class="chip chip--active" href="encuestas.html" aria-current="page">Todos (2.486)</a>
+                        <a class="chip" href="encuestas.html?segmento=promotor">Promotores (1.520)</a>
+                        <a class="chip" href="encuestas.html?segmento=pasivo">Pasivos (564)</a>
+                        <a class="chip" href="encuestas.html?segmento=detractor">Detractores (402)</a>
+                    </div>
                 </div>
 
-                <div class="records-summary bcp-mt-16">
+                <div class="records-summary">
                     <p class="records-count">2.486 respuestas registradas</p>
-                    <p class="small-flexo text-muted">Mostrando 8 registros de ejemplo</p>
+                    <p class="small-flexo text-muted">Mostrando 8 respuestas recientes · Semana 4</p>
                 </div>
 
+                <!-- Surveys data table -->
                 <div class="table-container">
                     <table class="data-table">
                         <thead>
@@ -112,92 +125,168 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>ENC-2486</td>
+                                <td><strong>ENC-2486</strong></td>
                                 <td>30/08/2026</td>
                                 <td>S4-Ago</td>
-                                <td>Banca Móvil</td>
-                                <td><strong>10</strong></td>
+                                <td><span class="channel-name">Banca Móvil</span></td>
+                                <td><span class="nps-metric-pill nps-metric-pill--high">10</span></td>
                                 <td><span class="status-badge status-badge--promoter">Promotor</span></td>
                                 <td>Operación rápida</td>
                                 <td>La transferencia se realizó sin demoras.</td>
-                                <td><span class="source-tag source-tag--clevertap">CleverTap</span></td>
+                                <td>
+                                    <span class="source-tag source-tag--clevertap">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polygon points="10 8 16 12 10 16 10 8" />
+                                        </svg>
+                                        CleverTap
+                                    </span>
+                                </td>
                             </tr>
                             <tr>
-                                <td>ENC-2485</td>
+                                <td><strong>ENC-2485</strong></td>
                                 <td>30/08/2026</td>
                                 <td>S4-Ago</td>
-                                <td>Cajeros Automáticos</td>
-                                <td><strong>4</strong></td>
+                                <td><span class="channel-name">Cajeros Automáticos</span></td>
+                                <td><span class="nps-metric-pill nps-metric-pill--detractor">4</span></td>
                                 <td><span class="status-badge status-badge--detractor">Detractor</span></td>
                                 <td>Fuera de servicio</td>
                                 <td>El primer cajero que visité no estaba disponible.</td>
-                                <td><span class="source-tag source-tag--ai">Agente IA</span></td>
+                                <td>
+                                    <span class="source-tag source-tag--ai">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                                        </svg>
+                                        Agente IA
+                                    </span>
+                                </td>
                             </tr>
                             <tr>
-                                <td>ENC-2484</td>
+                                <td><strong>ENC-2484</strong></td>
                                 <td>29/08/2026</td>
                                 <td>S4-Ago</td>
-                                <td>Agentes BCP</td>
-                                <td><strong>9</strong></td>
+                                <td><span class="channel-name">Agentes BCP</span></td>
+                                <td><span class="nps-metric-pill nps-metric-pill--high">9</span></td>
                                 <td><span class="status-badge status-badge--promoter">Promotor</span></td>
                                 <td>Buen trato</td>
                                 <td>La atención fue amable y clara.</td>
-                                <td><span class="source-tag source-tag--ai">Agente IA</span></td>
+                                <td>
+                                    <span class="source-tag source-tag--ai">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                                        </svg>
+                                        Agente IA
+                                    </span>
+                                </td>
                             </tr>
                             <tr>
-                                <td>ENC-2483</td>
+                                <td><strong>ENC-2483</strong></td>
                                 <td>29/08/2026</td>
                                 <td>S4-Ago</td>
-                                <td>Plataforma</td>
-                                <td><strong>7</strong></td>
+                                <td><span class="channel-name">Plataforma</span></td>
+                                <td><span class="nps-metric-pill nps-metric-pill--warn">7</span></td>
                                 <td><span class="status-badge status-badge--passive">Pasivo</span></td>
                                 <td>Tiempo de espera</td>
                                 <td>El trámite fue correcto, pero tomó más tiempo del esperado.</td>
-                                <td><span class="source-tag source-tag--qr">Encuesta QR</span></td>
+                                <td>
+                                    <span class="source-tag source-tag--qr">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <rect x="3" y="3" width="7" height="7" />
+                                            <rect x="14" y="3" width="7" height="7" />
+                                            <rect x="14" y="14" width="7" height="7" />
+                                            <rect x="3" y="14" width="7" height="7" />
+                                        </svg>
+                                        Encuesta QR
+                                    </span>
+                                </td>
                             </tr>
                             <tr>
-                                <td>ENC-2482</td>
+                                <td><strong>ENC-2482</strong></td>
                                 <td>28/08/2026</td>
                                 <td>S4-Ago</td>
-                                <td>Ventanilla</td>
-                                <td><strong>3</strong></td>
+                                <td><span class="channel-name">Ventanilla</span></td>
+                                <td><span class="nps-metric-pill nps-metric-pill--detractor">3</span></td>
                                 <td><span class="status-badge status-badge--detractor">Detractor</span></td>
                                 <td>Fila extensa</td>
                                 <td>Esperé demasiado para realizar la operación.</td>
-                                <td><span class="source-tag source-tag--qr">Encuesta QR</span></td>
+                                <td>
+                                    <span class="source-tag source-tag--qr">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <rect x="3" y="3" width="7" height="7" />
+                                            <rect x="14" y="3" width="7" height="7" />
+                                            <rect x="14" y="14" width="7" height="7" />
+                                            <rect x="3" y="14" width="7" height="7" />
+                                        </svg>
+                                        Encuesta QR
+                                    </span>
+                                </td>
                             </tr>
                             <tr>
-                                <td>ENC-2481</td>
+                                <td><strong>ENC-2481</strong></td>
                                 <td>28/08/2026</td>
                                 <td>S4-Ago</td>
-                                <td>Tarjeta Prepago</td>
-                                <td><strong>8</strong></td>
+                                <td><span class="channel-name">Tarjeta Prepago</span></td>
+                                <td><span class="nps-metric-pill nps-metric-pill--warn">8</span></td>
                                 <td><span class="status-badge status-badge--passive">Pasivo</span></td>
                                 <td>Información clara</td>
                                 <td>El proceso fue sencillo, aunque faltó una confirmación final.</td>
-                                <td><span class="source-tag source-tag--clevertap">CleverTap</span></td>
+                                <td>
+                                    <span class="source-tag source-tag--clevertap">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polygon points="10 8 16 12 10 16 10 8" />
+                                        </svg>
+                                        CleverTap
+                                    </span>
+                                </td>
                             </tr>
                             <tr>
-                                <td>ENC-2480</td>
+                                <td><strong>ENC-2480</strong></td>
                                 <td>27/08/2026</td>
                                 <td>S4-Ago</td>
-                                <td>Banca Móvil</td>
-                                <td><strong>10</strong></td>
+                                <td><span class="channel-name">Banca Móvil</span></td>
+                                <td><span class="nps-metric-pill nps-metric-pill--high">10</span></td>
                                 <td><span class="status-badge status-badge--promoter">Promotor</span></td>
                                 <td>Facilidad de uso</td>
                                 <td>Pude completar el pago rápidamente.</td>
-                                <td><span class="source-tag source-tag--clevertap">CleverTap</span></td>
+                                <td>
+                                    <span class="source-tag source-tag--clevertap">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polygon points="10 8 16 12 10 16 10 8" />
+                                        </svg>
+                                        CleverTap
+                                    </span>
+                                </td>
                             </tr>
                             <tr>
-                                <td>ENC-2479</td>
+                                <td><strong>ENC-2479</strong></td>
                                 <td>27/08/2026</td>
                                 <td>S4-Ago</td>
-                                <td>Microcréditos</td>
-                                <td><strong>5</strong></td>
+                                <td><span class="channel-name">Microcréditos</span></td>
+                                <td><span class="nps-metric-pill nps-metric-pill--detractor">5</span></td>
                                 <td><span class="status-badge status-badge--detractor">Detractor</span></td>
                                 <td>Falta de información</td>
                                 <td>No comprendí todos los requisitos del proceso.</td>
-                                <td><span class="source-tag source-tag--traditional">Encuestadoras</span></td>
+                                <td>
+                                    <span class="source-tag source-tag--traditional">
+                                        Encuestadoras
+                                    </span>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

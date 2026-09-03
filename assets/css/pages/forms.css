@@ -257,13 +257,15 @@ fieldset.form-field legend {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.75rem;
+  min-width: 2.35rem;
   height: 1.75rem;
+  padding: 0 var(--bcp-space-6);
   border-radius: var(--bcp-border-radius-8);
   background: var(--bcp-color-blue-100);
   color: var(--bcp-color-blue);
-  font-size: var(--bcp-font-size-small);
+  font-size: var(--bcp-font-size-extra-small);
   font-weight: var(--bcp-font-weight-bold);
+  white-space: nowrap;
   flex-shrink: 0;
 }
 

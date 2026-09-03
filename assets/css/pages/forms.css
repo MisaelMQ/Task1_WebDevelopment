@@ -1,11 +1,45 @@
+/* ==========================================================================
+   Form Page Styles - CX Insight
+   ========================================================================== */
+
+/* Main form layout: primary card and sidebar guidance */
+.form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: var(--bcp-space-24);
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .form-card {
-  padding: var(--bcp-space-24);
+  padding: var(--bcp-space-32);
+  border-radius: var(--bcp-border-radius-8);
+  border: 1px solid var(--bcp-border-color);
+  border-top: 3px solid var(--bcp-color-orange);
+  background: var(--bcp-color-white);
+  box-shadow: var(--bcp-shadow-sm);
+  transition: box-shadow var(--bcp-transition-base);
+}
+
+.form-card:hover {
+  box-shadow: var(--bcp-shadow-md);
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--bcp-space-20) var(--bcp-space-24);
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .form-grid__full {
@@ -21,9 +55,173 @@
 .form-section__header {
   display: grid;
   gap: var(--bcp-space-4);
-  margin-bottom: var(--bcp-space-20);
+  margin-bottom: var(--bcp-space-24);
 }
 
+.form-section__title {
+  display: flex;
+  align-items: center;
+  gap: var(--bcp-space-8);
+  color: var(--bcp-color-blue);
+  font-size: var(--bcp-font-size-large);
+  font-weight: var(--bcp-font-weight-demi);
+}
+
+.form-section__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--bcp-border-radius-full);
+  background: var(--bcp-color-blue-100);
+  color: var(--bcp-color-blue);
+}
+
+/* Enhanced radio button choice cards for status */
+.choice-card-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bcp-space-12);
+}
+
+.choice-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: var(--bcp-space-12) var(--bcp-space-16);
+  border: 1px solid var(--bcp-border-color-strong);
+  border-radius: var(--bcp-border-radius-8);
+  background: var(--bcp-color-white);
+  cursor: pointer;
+  transition: all var(--bcp-transition-fast);
+  user-select: none;
+}
+
+.choice-card:hover {
+  border-color: var(--bcp-color-blue);
+  background: #f8faff;
+}
+
+.choice-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice-card__indicator {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: var(--bcp-border-radius-full);
+  background: var(--bcp-text-dark-500);
+  transition: transform var(--bcp-transition-fast), background var(--bcp-transition-fast);
+}
+
+.choice-card__label {
+  font-size: var(--bcp-font-size-small);
+  font-weight: var(--bcp-font-weight-demi);
+  color: var(--bcp-text-dark-700);
+}
+
+.choice-card:has(input[value="activo"]:checked) {
+  border-color: var(--bcp-state-success);
+  background: var(--bcp-state-success-soft);
+}
+
+.choice-card:has(input[value="activo"]:checked) .choice-card__indicator {
+  background: var(--bcp-state-success);
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+}
+
+.choice-card:has(input[value="activo"]:checked) .choice-card__label {
+  color: #155724;
+}
+
+.choice-card:has(input[value="inactivo"]:checked) {
+  border-color: var(--bcp-text-dark-500);
+  background: #f1f3f7;
+}
+
+.choice-card:has(input[value="inactivo"]:checked) .choice-card__indicator {
+  background: var(--bcp-text-dark-500);
+  transform: scale(1.2);
+}
+
+.choice-card:has(input[value="inactivo"]:checked) .choice-card__label {
+  color: var(--bcp-text-dark-700);
+}
+
+/* Sidebar guidance card */
+.form-guide-card {
+  padding: var(--bcp-space-24);
+  border-radius: var(--bcp-border-radius-8);
+  border: 1px solid var(--bcp-border-color);
+  background: var(--bcp-color-surface);
+  box-shadow: var(--bcp-shadow-sm);
+}
+
+.form-guide-header {
+  display: flex;
+  align-items: center;
+  gap: var(--bcp-space-8);
+  margin-bottom: var(--bcp-space-16);
+  padding-bottom: var(--bcp-space-12);
+  border-bottom: 1px solid var(--bcp-border-color);
+}
+
+.form-guide-title {
+  color: var(--bcp-color-blue);
+  font-size: var(--bcp-font-size-base);
+  font-weight: var(--bcp-font-weight-demi);
+  margin: 0;
+}
+
+.form-guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bcp-space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-guide-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bcp-space-12);
+}
+
+.form-guide-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--bcp-border-radius-8);
+  background: var(--bcp-color-blue-100);
+  color: var(--bcp-color-blue);
+  font-size: var(--bcp-font-size-small);
+  font-weight: var(--bcp-font-weight-bold);
+  flex-shrink: 0;
+}
+
+.form-guide-text {
+  margin: 0;
+  font-size: var(--bcp-font-size-small);
+  line-height: 1.45;
+  color: var(--bcp-text-dark-700);
+}
+
+.form-guide-text strong {
+  display: block;
+  color: var(--bcp-text-dark-900);
+  margin-bottom: var(--bcp-space-2);
+}
+
+/* Actions footer */
 .form-actions {
   display: flex;
   align-items: center;

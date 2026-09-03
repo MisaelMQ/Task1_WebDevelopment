@@ -73,7 +73,7 @@
 .button[aria-disabled="true"] {
   color: var(--bcp-text-dark-500);
   border-color: var(--bcp-border-color);
-  background: #e9ebf2;
+  background: var(--bcp-color-disabled);
   cursor: not-allowed;
   opacity: 0.8;
 }

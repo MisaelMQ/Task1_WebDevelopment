@@ -9,10 +9,6 @@
   gap: var(--bcp-space-16);
   margin-bottom: var(--bcp-space-16);
   padding: var(--bcp-space-20);
-  border-radius: var(--bcp-border-radius-8);
-  border: 1px solid var(--bcp-border-color);
-  background: var(--bcp-color-surface);
-  box-shadow: var(--bcp-shadow-sm);
 }
 
 .records-toolbar__main {
@@ -22,13 +18,13 @@
   gap: var(--bcp-space-12);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .records-toolbar__main {
     grid-template-columns: 1fr;
   }
 }
 
-/* Quick filter chips */
+/* Quick filter presets */
 .records-chips {
   display: flex;
   align-items: center;
@@ -45,39 +41,6 @@
   margin-right: var(--bcp-space-4);
 }
 
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--bcp-space-6);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--bcp-border-radius-full);
-  border: 1px solid var(--bcp-border-color-strong);
-  background: var(--bcp-color-white);
-  color: var(--bcp-text-dark-700);
-  font-size: var(--bcp-font-size-extra-small);
-  font-weight: var(--bcp-font-weight-demi);
-  text-decoration: none;
-  cursor: pointer;
-  transition: all var(--bcp-transition-fast);
-}
-
-.chip:hover {
-  border-color: var(--bcp-color-blue);
-  color: var(--bcp-color-blue);
-  background: var(--bcp-color-blue-100);
-}
-
-.chip--active {
-  border-color: var(--bcp-color-blue);
-  background: var(--bcp-color-blue);
-  color: var(--bcp-color-white);
-}
-
-.chip--active:hover {
-  background: var(--bcp-color-blue-700);
-  color: var(--bcp-color-white);
-}
-
 /* Summary counters bar */
 .records-summary {
   display: flex;
@@ -91,30 +54,6 @@
   font-weight: var(--bcp-font-weight-demi);
   color: var(--bcp-text-dark-700);
   font-size: var(--bcp-font-size-small);
-}
-
-/* Channel cell with icon */
-.channel-cell {
-  display: flex;
-  align-items: center;
-  gap: var(--bcp-space-12);
-}
-
-.channel-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: var(--bcp-border-radius-8);
-  background: var(--bcp-color-blue-100);
-  color: var(--bcp-color-blue);
-  flex-shrink: 0;
-}
-
-.channel-name {
-  font-weight: var(--bcp-font-weight-demi);
-  color: var(--bcp-text-dark-900);
 }
 
 /* Source badges with semantic tint */
@@ -197,7 +136,8 @@
   transition: color var(--bcp-transition-fast), transform var(--bcp-transition-fast);
 }
 
-.table-action-link:hover {
+.table-action-link:hover,
+.table-action-link:focus-visible {
   color: var(--bcp-color-orange);
   transform: translateX(2px);
 }

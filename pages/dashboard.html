@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 
-<body>
+<body class="dashboard-page">
     <div class="app-shell">
         <header class="navbar">
             <div class="container navbar__inner">
@@ -56,7 +56,7 @@
                     <a class="button button--primary" href="registrar-encuesta.html">Registrar Encuesta</a>
                 </header>
 
-                <form class="dashboard-filters" action="dashboard.html" method="get">
+                <form class="surface dashboard-filters" action="dashboard.html" method="get">
                     <div class="filters-header">
                         <div class="filters-header__title">
                             <span>Filtros de Análisis</span>
@@ -317,15 +317,15 @@
 
                             <div class="chart-legend-row" aria-label="Leyenda del gráfico">
                                 <div class="chart-legend-item">
-                                    <span class="chart-legend-swatch" style="background: #51c31b"></span>
+                                    <span class="chart-legend-swatch chart-legend-swatch--promoter"></span>
                                     <span>Promotores</span>
                                 </div>
                                 <div class="chart-legend-item">
-                                    <span class="chart-legend-swatch" style="background: #ffc633"></span>
+                                    <span class="chart-legend-swatch chart-legend-swatch--passive"></span>
                                     <span>Pasivos</span>
                                 </div>
                                 <div class="chart-legend-item">
-                                    <span class="chart-legend-swatch" style="background: #ff451d"></span>
+                                    <span class="chart-legend-swatch chart-legend-swatch--detractor"></span>
                                     <span>Detractores</span>
                                 </div>
                             </div>
@@ -515,6 +515,7 @@
 
                     <div class="table-container">
                         <table class="data-table">
+                            <caption class="visually-hidden">Desempeño NPS por canal durante agosto de 2026</caption>
                             <thead>
                                 <tr>
                                     <th scope="col">Canal</th>
@@ -532,11 +533,6 @@
                                         <div class="channel-cell">
                                             <span>Banca móvil</span>
                                             <span class="channel-tag channel-tag--lead">
-                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"
-                                                    aria-hidden="true">
-                                                    <polygon
-                                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                                                </svg>
                                                 Líder
                                             </span>
                                         </div>
@@ -546,11 +542,11 @@
                                             title="Promotores: 73% | Pasivos: 18% | Detractores: 9%"
                                             aria-label="Promotores 73%, Pasivos 18%, Detractores 9%">
                                             <span class="stacked-bar__seg stacked-bar__seg--promoter"
-                                                style="width: 73%"></span>
+                                                style="--segment-value: 73%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--passive"
-                                                style="width: 18%"></span>
+                                                style="--segment-value: 18%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--detractor"
-                                                style="width: 9%"></span>
+                                                style="--segment-value: 9%"></span>
                                         </div>
                                     </td>
                                     <td>824</td>
@@ -570,11 +566,11 @@
                                             title="Promotores: 71% | Pasivos: 19% | Detractores: 10%"
                                             aria-label="Promotores 71%, Pasivos 19%, Detractores 10%">
                                             <span class="stacked-bar__seg stacked-bar__seg--promoter"
-                                                style="width: 71%"></span>
+                                                style="--segment-value: 71%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--passive"
-                                                style="width: 19%"></span>
+                                                style="--segment-value: 19%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--detractor"
-                                                style="width: 10%"></span>
+                                                style="--segment-value: 10%"></span>
                                         </div>
                                     </td>
                                     <td>548</td>
@@ -594,11 +590,11 @@
                                             title="Promotores: 66% | Pasivos: 21% | Detractores: 13%"
                                             aria-label="Promotores 66%, Pasivos 21%, Detractores 13%">
                                             <span class="stacked-bar__seg stacked-bar__seg--promoter"
-                                                style="width: 66%"></span>
+                                                style="--segment-value: 66%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--passive"
-                                                style="width: 21%"></span>
+                                                style="--segment-value: 21%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--detractor"
-                                                style="width: 13%"></span>
+                                                style="--segment-value: 13%"></span>
                                         </div>
                                     </td>
                                     <td>612</td>
@@ -618,11 +614,11 @@
                                             title="Promotores: 61% | Pasivos: 23% | Detractores: 16%"
                                             aria-label="Promotores 61%, Pasivos 23%, Detractores 16%">
                                             <span class="stacked-bar__seg stacked-bar__seg--promoter"
-                                                style="width: 61%"></span>
+                                                style="--segment-value: 61%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--passive"
-                                                style="width: 23%"></span>
+                                                style="--segment-value: 23%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--detractor"
-                                                style="width: 16%"></span>
+                                                style="--segment-value: 16%"></span>
                                         </div>
                                     </td>
                                     <td>296</td>
@@ -643,11 +639,11 @@
                                             title="Promotores: 59% | Pasivos: 25% | Detractores: 16%"
                                             aria-label="Promotores 59%, Pasivos 25%, Detractores 16%">
                                             <span class="stacked-bar__seg stacked-bar__seg--promoter"
-                                                style="width: 59%"></span>
+                                                style="--segment-value: 59%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--passive"
-                                                style="width: 25%"></span>
+                                                style="--segment-value: 25%"></span>
                                             <span class="stacked-bar__seg stacked-bar__seg--detractor"
-                                                style="width: 16%"></span>
+                                                style="--segment-value: 16%"></span>
                                         </div>
                                     </td>
                                     <td>206</td>

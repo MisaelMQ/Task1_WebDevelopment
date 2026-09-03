@@ -9,7 +9,9 @@
   --bcp-color-orange-100: #fff0e8;
   --bcp-color-white: #ffffff;
   --bcp-color-surface: #ffffff;
+  --bcp-color-surface-hover: #fafbfe;
   --bcp-color-background: #f5f7fb;
+  --bcp-color-disabled: #e9ebf2;
   --bcp-color-overlay: rgb(24 27 49 / 58%);
 
   --bcp-text-dark-900: #32335c;

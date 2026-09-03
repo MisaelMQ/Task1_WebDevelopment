@@ -52,26 +52,16 @@
                         <p class="text-muted">Consulta y filtra las respuestas del NPS transaccional por canal y segmento.</p>
                     </div>
                     <a class="button button--primary" href="registrar-encuesta.html">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
                         Registrar encuesta
                     </a>
                 </header>
 
                 <!-- Search and filtering toolbar -->
-                <div class="records-toolbar">
+                <div class="surface records-toolbar">
                     <form class="records-toolbar__main" action="encuestas.html" method="get">
                         <div class="form-field">
                             <label class="form-label" for="buscar-encuesta">Buscar respuesta</label>
                             <div class="search-field">
-                                <svg class="search-field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <circle cx="11" cy="11" r="8" />
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                </svg>
                                 <input class="form-control" id="buscar-encuesta" name="buscar" type="search"
                                     placeholder="Código, etiqueta o comentario...">
                             </div>
@@ -110,6 +100,7 @@
                 <!-- Surveys data table -->
                 <div class="table-container">
                     <table class="data-table">
+                        <caption class="visually-hidden">Respuestas NPS registradas por canal</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Código</th>
@@ -135,12 +126,6 @@
                                 <td>La transferencia se realizó sin demoras.</td>
                                 <td>
                                     <span class="source-tag source-tag--clevertap">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <polygon points="10 8 16 12 10 16 10 8" />
-                                        </svg>
                                         CleverTap
                                     </span>
                                 </td>
@@ -156,11 +141,6 @@
                                 <td>El primer cajero que visité no estaba disponible.</td>
                                 <td>
                                     <span class="source-tag source-tag--ai">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                                        </svg>
                                         Agente IA
                                     </span>
                                 </td>
@@ -176,11 +156,6 @@
                                 <td>La atención fue amable y clara.</td>
                                 <td>
                                     <span class="source-tag source-tag--ai">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                                        </svg>
                                         Agente IA
                                     </span>
                                 </td>
@@ -196,14 +171,6 @@
                                 <td>El trámite fue correcto, pero tomó más tiempo del esperado.</td>
                                 <td>
                                     <span class="source-tag source-tag--qr">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <rect x="3" y="3" width="7" height="7" />
-                                            <rect x="14" y="3" width="7" height="7" />
-                                            <rect x="14" y="14" width="7" height="7" />
-                                            <rect x="3" y="14" width="7" height="7" />
-                                        </svg>
                                         Encuesta QR
                                     </span>
                                 </td>
@@ -219,14 +186,6 @@
                                 <td>Esperé demasiado para realizar la operación.</td>
                                 <td>
                                     <span class="source-tag source-tag--qr">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <rect x="3" y="3" width="7" height="7" />
-                                            <rect x="14" y="3" width="7" height="7" />
-                                            <rect x="14" y="14" width="7" height="7" />
-                                            <rect x="3" y="14" width="7" height="7" />
-                                        </svg>
                                         Encuesta QR
                                     </span>
                                 </td>
@@ -242,12 +201,6 @@
                                 <td>El proceso fue sencillo, aunque faltó una confirmación final.</td>
                                 <td>
                                     <span class="source-tag source-tag--clevertap">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <polygon points="10 8 16 12 10 16 10 8" />
-                                        </svg>
                                         CleverTap
                                     </span>
                                 </td>
@@ -263,12 +216,6 @@
                                 <td>Pude completar el pago rápidamente.</td>
                                 <td>
                                     <span class="source-tag source-tag--clevertap">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <polygon points="10 8 16 12 10 16 10 8" />
-                                        </svg>
                                         CleverTap
                                     </span>
                                 </td>
@@ -294,11 +241,11 @@
 
                 <nav aria-label="Paginación">
                     <ul class="pagination">
-                        <li><a class="pagination__link" href="#" aria-label="Página anterior">‹</a></li>
-                        <li><a class="pagination__link" href="#" aria-current="page">1</a></li>
-                        <li><a class="pagination__link" href="#">2</a></li>
-                        <li><a class="pagination__link" href="#">3</a></li>
-                        <li><a class="pagination__link" href="#" aria-label="Página siguiente">›</a></li>
+                        <li><a class="pagination__link" href="encuestas.html" aria-label="Página anterior">‹</a></li>
+                        <li><a class="pagination__link" href="encuestas.html" aria-current="page">1</a></li>
+                        <li><a class="pagination__link" href="encuestas.html?pagina=2">2</a></li>
+                        <li><a class="pagination__link" href="encuestas.html?pagina=3">3</a></li>
+                        <li><a class="pagination__link" href="encuestas.html?pagina=2" aria-label="Página siguiente">›</a></li>
                     </ul>
                 </nav>
             </div>

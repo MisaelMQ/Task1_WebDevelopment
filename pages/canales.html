@@ -53,26 +53,16 @@
                             transaccional.</p>
                     </div>
                     <a class="button button--primary" href="registrar-canal.html">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
                         Registrar canal
                     </a>
                 </header>
 
                 <!-- Search and filtering toolbar -->
-                <div class="records-toolbar">
+                <div class="surface records-toolbar">
                     <form class="records-toolbar__main" action="canales.html" method="get">
                         <div class="form-field">
                             <label class="form-label" for="buscar-canal">Buscar canal</label>
                             <div class="search-field">
-                                <svg class="search-field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <circle cx="11" cy="11" r="8" />
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                </svg>
                                 <input class="form-control" id="buscar-canal" name="buscar" type="search"
                                     placeholder="Nombre o código del canal...">
                             </div>
@@ -110,6 +100,7 @@
                 <!-- Channels data table -->
                 <div class="table-container">
                     <table class="data-table">
+                        <caption class="visually-hidden">Canales de atención registrados y sus indicadores NPS</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Código</th>
@@ -126,27 +117,11 @@
                                 <td><strong>CAN-001</strong></td>
                                 <td>
                                     <div class="channel-cell">
-                                        <span class="channel-icon" aria-hidden="true">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <rect x="3" y="4" width="18" height="16" rx="2" />
-                                                <line x1="7" y1="8" x2="17" y2="8" />
-                                                <line x1="7" y1="12" x2="11" y2="12" />
-                                                <line x1="7" y1="16" x2="17" y2="16" />
-                                            </svg>
-                                        </span>
                                         <span class="channel-name">Cajeros Automáticos</span>
                                     </div>
                                 </td>
                                 <td>
                                     <span class="source-tag source-tag--ai">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <path
-                                                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                                        </svg>
                                         Agente IA
                                     </span>
                                 </td>
@@ -159,25 +134,11 @@
                                 <td><strong>CAN-002</strong></td>
                                 <td>
                                     <div class="channel-cell">
-                                        <span class="channel-icon" aria-hidden="true">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                                <polyline points="9 22 9 12 15 12 15 22" />
-                                            </svg>
-                                        </span>
                                         <span class="channel-name">Agentes BCP</span>
                                     </div>
                                 </td>
                                 <td>
                                     <span class="source-tag source-tag--ai">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <path
-                                                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                                        </svg>
                                         Agente IA
                                     </span>
                                 </td>
@@ -190,25 +151,11 @@
                                 <td><strong>CAN-003</strong></td>
                                 <td>
                                     <div class="channel-cell">
-                                        <span class="channel-icon" aria-hidden="true">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                                                <line x1="12" y1="18" x2="12.01" y2="18" />
-                                            </svg>
-                                        </span>
                                         <span class="channel-name">Banca Móvil</span>
                                     </div>
                                 </td>
                                 <td>
                                     <span class="source-tag source-tag--clevertap">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <polygon points="10 8 16 12 10 16 10 8" />
-                                        </svg>
                                         CleverTap
                                     </span>
                                 </td>
@@ -221,27 +168,11 @@
                                 <td><strong>CAN-004</strong></td>
                                 <td>
                                     <div class="channel-cell">
-                                        <span class="channel-icon" aria-hidden="true">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                                <circle cx="12" cy="7" r="4" />
-                                            </svg>
-                                        </span>
                                         <span class="channel-name">Plataforma</span>
                                     </div>
                                 </td>
                                 <td>
                                     <span class="source-tag source-tag--qr">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <rect x="3" y="3" width="7" height="7" />
-                                            <rect x="14" y="3" width="7" height="7" />
-                                            <rect x="14" y="14" width="7" height="7" />
-                                            <rect x="3" y="14" width="7" height="7" />
-                                        </svg>
                                         Encuesta QR
                                     </span>
                                 </td>
@@ -254,29 +185,11 @@
                                 <td><strong>CAN-005</strong></td>
                                 <td>
                                     <div class="channel-cell">
-                                        <span class="channel-icon" aria-hidden="true">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M2 3h20" />
-                                                <path d="M21 3v18H3V3" />
-                                                <path d="M7 8h10" />
-                                                <path d="M7 12h10" />
-                                            </svg>
-                                        </span>
                                         <span class="channel-name">Ventanilla</span>
                                     </div>
                                 </td>
                                 <td>
                                     <span class="source-tag source-tag--qr">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <rect x="3" y="3" width="7" height="7" />
-                                            <rect x="14" y="3" width="7" height="7" />
-                                            <rect x="14" y="14" width="7" height="7" />
-                                            <rect x="3" y="14" width="7" height="7" />
-                                        </svg>
                                         Encuesta QR
                                     </span>
                                 </td>
@@ -289,25 +202,11 @@
                                 <td><strong>CAN-006</strong></td>
                                 <td>
                                     <div class="channel-cell">
-                                        <span class="channel-icon" aria-hidden="true">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-                                                <line x1="1" y1="10" x2="23" y2="10" />
-                                            </svg>
-                                        </span>
                                         <span class="channel-name">Tarjeta Prepago</span>
                                     </div>
                                 </td>
                                 <td>
                                     <span class="source-tag source-tag--clevertap">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" aria-hidden="true">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <polygon points="10 8 16 12 10 16 10 8" />
-                                        </svg>
                                         CleverTap
                                     </span>
                                 </td>
@@ -320,14 +219,6 @@
                                 <td><strong>CAN-007</strong></td>
                                 <td>
                                     <div class="channel-cell">
-                                        <span class="channel-icon" aria-hidden="true">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="9" />
-                                                <path d="M12 7v10M9 9h6" />
-                                            </svg>
-                                        </span>
                                         <span class="channel-name">Microcréditos</span>
                                     </div>
                                 </td>
@@ -347,10 +238,10 @@
 
                 <nav aria-label="Paginación">
                     <ul class="pagination">
-                        <li><a class="pagination__link" href="#" aria-label="Página anterior">‹</a></li>
-                        <li><a class="pagination__link" href="#" aria-current="page">1</a></li>
-                        <li><a class="pagination__link" href="#">2</a></li>
-                        <li><a class="pagination__link" href="#" aria-label="Página siguiente">›</a></li>
+                        <li><a class="pagination__link" href="canales.html" aria-label="Página anterior">‹</a></li>
+                        <li><a class="pagination__link" href="canales.html" aria-current="page">1</a></li>
+                        <li><a class="pagination__link" href="canales.html?pagina=2">2</a></li>
+                        <li><a class="pagination__link" href="canales.html?pagina=2" aria-label="Página siguiente">›</a></li>
                     </ul>
                 </nav>
             </div>

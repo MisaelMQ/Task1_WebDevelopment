@@ -46,7 +46,7 @@
   grid-column: 1 / -1;
 }
 
-.form-section + .form-section {
+.form-section+.form-section {
   margin-top: var(--bcp-space-32);
   padding-top: var(--bcp-space-32);
   border-top: 1px solid var(--bcp-border-color);
@@ -63,7 +63,7 @@
   align-items: center;
   gap: var(--bcp-space-8);
   color: var(--bcp-color-blue);
-  font-size: var(--bcp-font-size-large);
+  font-size: var(--bcp-font-size-h4);
   font-weight: var(--bcp-font-weight-demi);
 }
 
@@ -101,7 +101,7 @@
 
 .choice-card:hover {
   border-color: var(--bcp-color-blue);
-  background: #f8faff;
+  background: var(--bcp-color-blue-100);
 }
 
 .choice-card input[type="radio"] {
@@ -133,16 +133,16 @@
 .choice-card:has(input[value="activo"]:checked) .choice-card__indicator {
   background: var(--bcp-state-success);
   transform: scale(1.2);
-  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+  box-shadow: 0 0 0 3px rgb(36 138 90 / 20%);
 }
 
 .choice-card:has(input[value="activo"]:checked) .choice-card__label {
-  color: #155724;
+  color: var(--bcp-state-success);
 }
 
 .choice-card:has(input[value="inactivo"]:checked) {
   border-color: var(--bcp-text-dark-500);
-  background: #f1f3f7;
+  background: var(--bcp-color-background);
 }
 
 .choice-card:has(input[value="inactivo"]:checked) .choice-card__indicator {
@@ -174,7 +174,7 @@
 
 .form-guide-title {
   color: var(--bcp-color-blue);
-  font-size: var(--bcp-font-size-base);
+  font-size: var(--bcp-font-size-p-16);
   font-weight: var(--bcp-font-weight-demi);
   margin: 0;
 }

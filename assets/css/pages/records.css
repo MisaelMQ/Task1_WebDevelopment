@@ -74,7 +74,7 @@
 }
 
 .chip--active:hover {
-  background: var(--bcp-color-blue-dark);
+  background: var(--bcp-color-blue-700);
   color: var(--bcp-color-white);
 }
 
@@ -130,27 +130,27 @@
 }
 
 .source-tag--ai {
-  background: #f3e8ff;
-  color: #6b21a8;
-  border: 1px solid rgba(107, 33, 168, 0.15);
+  background: var(--bcp-color-blue-100);
+  color: var(--bcp-color-blue);
+  border: 1px solid var(--bcp-border-color);
 }
 
 .source-tag--clevertap {
-  background: #e0f2fe;
-  color: #0369a1;
-  border: 1px solid rgba(3, 105, 161, 0.15);
+  background: var(--bcp-state-info-soft);
+  color: var(--bcp-state-info);
+  border: 1px solid var(--bcp-border-color);
 }
 
 .source-tag--qr {
-  background: #ccfbf1;
-  color: #0f766e;
-  border: 1px solid rgba(15, 118, 110, 0.15);
+  background: var(--bcp-state-success-soft);
+  color: var(--bcp-state-success);
+  border: 1px solid var(--bcp-border-color);
 }
 
 .source-tag--traditional {
-  background: #f1f5f9;
-  color: #475569;
-  border: 1px solid rgba(71, 85, 105, 0.15);
+  background: var(--bcp-color-background);
+  color: var(--bcp-text-dark-700);
+  border: 1px solid var(--bcp-border-color);
 }
 
 /* NPS badge pills */
@@ -171,8 +171,8 @@
 }
 
 .nps-metric-pill--mid {
-  background: rgba(81, 195, 27, 0.12);
-  color: #2b7a0f;
+  background: var(--bcp-color-blue-100);
+  color: var(--bcp-color-blue);
 }
 
 .nps-metric-pill--warn {

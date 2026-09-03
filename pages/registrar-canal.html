@@ -55,7 +55,8 @@
             <div class="container">
                 <nav aria-label="Ruta de navegación">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="text-breadcrumb-link" href="dashboard.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a class="text-breadcrumb-link" href="dashboard.html">Inicio</a>
+                        </li>
                         <li class="breadcrumb-item"><a class="text-breadcrumb-link" href="canales.html">Canales</a></li>
                         <li class="breadcrumb-item" aria-current="page">Registrar canal</li>
                     </ol>
@@ -64,7 +65,8 @@
                 <header class="page-header">
                     <div class="page-header__content">
                         <h1>Registrar canal</h1>
-                        <p class="text-muted">Define los parámetros operativos y de medición para el canal de atención.</p>
+                        <p class="text-muted">Define los parámetros operativos y de medición para el canal de atención.
+                        </p>
                     </div>
                 </header>
 
@@ -75,31 +77,39 @@
                             <header class="form-section__header">
                                 <h2 class="form-section__title" id="datos-canal-title">
                                     <span class="form-section__icon" aria-hidden="true">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M12 20h9"/>
-                                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M12 20h9" />
+                                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
                                         </svg>
                                     </span>
                                     Datos del canal
                                 </h2>
-                                <p class="small-flexo text-muted">Los campos marcados con asterisco (*) son requeridos.</p>
+                                <p class="small-flexo text-muted">Los campos marcados con asterisco (*) son requeridos.
+                                </p>
                             </header>
 
                             <div class="form-grid">
                                 <div class="form-field">
-                                    <label class="form-label" for="codigo-canal">Código <span class="form-label__required">*</span></label>
-                                    <input class="form-control" id="codigo-canal" name="codigo" type="text" placeholder="Ej. CAN-008" required>
+                                    <label class="form-label" for="codigo-canal">Código <span
+                                            class="form-label__required">*</span></label>
+                                    <input class="form-control" id="codigo-canal" name="codigo" type="text"
+                                        placeholder="Ej. CAN-008" required>
                                     <span class="form-help">Identificador único dentro del ecosistema NPS.</span>
                                 </div>
 
                                 <div class="form-field">
-                                    <label class="form-label" for="nombre-canal">Nombre <span class="form-label__required">*</span></label>
-                                    <input class="form-control" id="nombre-canal" name="nombre" type="text" placeholder="Ej. Agente BCP" required>
+                                    <label class="form-label" for="nombre-canal">Nombre <span
+                                            class="form-label__required">*</span></label>
+                                    <input class="form-control" id="nombre-canal" name="nombre" type="text"
+                                        placeholder="Ej. Agente BCP" required>
                                     <span class="form-help">Nombre formal del canal con mayúsculas iniciales.</span>
                                 </div>
 
                                 <div class="form-field">
-                                    <label class="form-label" for="fuente-canal">Fuente de información <span class="form-label__required">*</span></label>
+                                    <label class="form-label" for="fuente-canal">Fuente de información <span
+                                            class="form-label__required">*</span></label>
                                     <select class="form-select" id="fuente-canal" name="fuente" required>
                                         <option value="" selected disabled>Selecciona la fuente</option>
                                         <option value="Agente IA">Agente IA</option>
@@ -122,7 +132,8 @@
                                 </div>
 
                                 <fieldset class="form-field form-grid__full">
-                                    <legend class="form-label">Estado operativo <span class="form-label__required">*</span></legend>
+                                    <legend class="form-label">Estado operativo <span
+                                            class="form-label__required">*</span></legend>
                                     <div class="choice-card-group">
                                         <label class="choice-card">
                                             <input type="radio" name="estado" value="activo" checked>
@@ -139,8 +150,11 @@
 
                                 <div class="form-field form-grid__full">
                                     <label class="form-label" for="descripcion-canal">Descripción y alcance</label>
-                                    <textarea class="form-textarea" id="descripcion-canal" name="descripcion" maxlength="255" placeholder="Describe brevemente los puntos de contacto y objetivo del canal..."></textarea>
-                                    <span class="form-help">Máximo 255 caracteres. Opcional para documentación interna.</span>
+                                    <textarea class="form-textarea" id="descripcion-canal" name="descripcion"
+                                        maxlength="255"
+                                        placeholder="Describe brevemente los puntos de contacto y objetivo del canal..."></textarea>
+                                    <span class="form-help">Máximo 255 caracteres. Opcional para documentación
+                                        interna.</span>
                                 </div>
                             </div>
                         </section>
@@ -155,10 +169,11 @@
                     <aside class="form-guide-card" aria-label="Guía de fuentes de canal">
                         <header class="form-guide-header">
                             <span class="form-section__icon" aria-hidden="true">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="16" x2="12" y2="12" />
+                                    <line x1="12" y1="8" x2="12.01" y2="8" />
                                 </svg>
                             </span>
                             <h3 class="form-guide-title">Fuentes de feedback CX</h3>
@@ -176,7 +191,8 @@
                                 <span class="form-guide-badge" aria-hidden="true">CT</span>
                                 <div class="form-guide-text">
                                     <strong>CleverTap</strong>
-                                    Métricas en tiempo real integradas en canales digitales (Banca Móvil y Tarjeta Prepago).
+                                    Métricas en tiempo real integradas en canales digitales (Banca Móvil y Tarjeta
+                                    Prepago).
                                 </div>
                             </li>
                             <li class="form-guide-item">

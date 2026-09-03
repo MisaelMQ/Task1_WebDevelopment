@@ -105,19 +105,33 @@
 
 .search-field {
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .search-field .form-control {
-  padding-left: var(--bcp-space-40);
+  padding-left: 2.5rem;
 }
 
 .search-field__icon {
   position: absolute;
   top: 50%;
-  left: var(--bcp-space-12);
+  left: 0.875rem;
   width: 1.125rem;
   height: 1.125rem;
   color: var(--bcp-text-dark-500);
   pointer-events: none;
   transform: translateY(-50%);
+}
+
+/* Fallback if .search-field is placed on container with label */
+.form-field.search-field {
+  display: grid;
+}
+
+.form-field.search-field .search-field__icon {
+  top: auto;
+  bottom: 0.875rem;
+  transform: none;
 }

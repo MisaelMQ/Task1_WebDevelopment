@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Listado de canales incluidos en el seguimiento NPS.">
+    <title>Canales | CX Insight</title>
+    <link rel="icon" href="../assets/img/logo/favicon-orange-whit-blue.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="navbar">
+            <div class="container navbar__inner">
+                <a class="navbar__brand" href="dashboard.html" aria-label="Ir al dashboard">
+                    <img class="navbar__logo" src="../assets/img/logo/logo-white-with-bluebg-bo.svg"
+                        alt="Logo institucional">
+                </a>
+                <nav aria-label="Navegación principal">
+                    <ul class="navbar__nav">
+                        <li><a class="navbar__link" href="dashboard.html">Dashboard</a></li>
+                        <li><a class="navbar__link" href="canales.html" aria-current="page">Canales</a></li>
+                        <li><a class="navbar__link" href="encuestas.html">Encuestas</a></li>
+                    </ul>
+                </nav>
+                <div class="navbar__profile">
+                    <div>
+                        <p class="small-flexo text-demi">María López</p>
+                        <p class="extra-small-flexo">Analista CX</p>
+                    </div>
+                    <span class="navbar__avatar" aria-hidden="true">ML</span>
+                    <a class="navbar__link" href="../index.html">Salir</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-main">
+            <div class="container">
+                <nav aria-label="Ruta de navegación">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="text-breadcrumb-link" href="dashboard.html">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item" aria-current="page">Canales</li>
+                    </ol>
+                </nav>
+
+                <header class="page-header">
+                    <div class="page-header__content">
+                        <h1>Canales de atención</h1>
+                        <p class="text-muted">Supervisa y gestiona los canales incluidos en la medición del NPS
+                            transaccional.</p>
+                    </div>
+                    <a class="button button--primary" href="registrar-canal.html">
+                        Registrar canal
+                    </a>
+                </header>
+
+                <!-- Search and filtering toolbar -->
+                <div class="surface records-toolbar">
+                    <form class="records-toolbar__main" action="canales.html" method="get">
+                        <div class="form-field">
+                            <label class="form-label" for="buscar-canal">Buscar canal</label>
+                            <div class="search-field">
+                                <input class="form-control" id="buscar-canal" name="buscar" type="search"
+                                    placeholder="Nombre o código del canal...">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="fuente-canal">Fuente</label>
+                            <select class="form-select" id="fuente-canal" name="fuente">
+                                <option value="todas" selected>Todas las fuentes</option>
+                                <option value="Agente IA">Agente IA</option>
+                                <option value="CleverTap">CleverTap</option>
+                                <option value="Encuesta QR">Encuesta QR</option>
+                                <option value="Encuestadoras">Encuestadoras</option>
+                                <option value="Carga manual">Carga manual</option>
+                            </select>
+                        </div>
+                        <button class="button button--secondary" type="submit">Filtrar</button>
+                    </form>
+
+                    <!-- Quick filter preset chips -->
+                    <div class="records-chips">
+                        <span class="records-chips__label">Filtros rápidos:</span>
+                        <a class="chip chip--active" href="canales.html" aria-current="page">Todos (7)</a>
+                        <a class="chip" href="canales.html?fuente=Agente+IA">Agente IA (2)</a>
+                        <a class="chip" href="canales.html?fuente=CleverTap">CleverTap (2)</a>
+                        <a class="chip" href="canales.html?fuente=Encuesta+QR">Encuesta QR (2)</a>
+                        <a class="chip" href="canales.html?fuente=Encuestadoras">Encuestadoras (1)</a>
+                    </div>
+                </div>
+
+                <div class="records-summary">
+                    <p class="records-count">7 canales registrados</p>
+                    <p class="small-flexo text-muted">Actualización: 31/08/2026 · Ecosistema Nacional</p>
+                </div>
+
+                <!-- Channels data table -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <caption class="visually-hidden">Canales de atención registrados y sus indicadores NPS</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Canal</th>
+                                <th scope="col">Fuente</th>
+                                <th scope="col">Respuestas</th>
+                                <th scope="col">NPS</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col"><span class="visually-hidden">Acciones</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>CAN-001</strong></td>
+                                <td>
+                                    <div class="channel-cell">
+                                        <span class="channel-name">Cajeros Automáticos</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="source-tag source-tag--ai">
+                                        Agente IA
+                                    </span>
+                                </td>
+                                <td>612</td>
+                                <td><span class="nps-metric-pill nps-metric-pill--mid">+53</span></td>
+                                <td><span class="status-badge status-badge--active">Activo</span></td>
+                                <td><a class="table-action-link" href="encuestas.html">Ver encuestas &rarr;</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CAN-002</strong></td>
+                                <td>
+                                    <div class="channel-cell">
+                                        <span class="channel-name">Agentes BCP</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="source-tag source-tag--ai">
+                                        Agente IA
+                                    </span>
+                                </td>
+                                <td>548</td>
+                                <td><span class="nps-metric-pill nps-metric-pill--high">+61</span></td>
+                                <td><span class="status-badge status-badge--active">Activo</span></td>
+                                <td><a class="table-action-link" href="encuestas.html">Ver encuestas &rarr;</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CAN-003</strong></td>
+                                <td>
+                                    <div class="channel-cell">
+                                        <span class="channel-name">Banca Móvil</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="source-tag source-tag--clevertap">
+                                        CleverTap
+                                    </span>
+                                </td>
+                                <td>824</td>
+                                <td><span class="nps-metric-pill nps-metric-pill--high">+64</span></td>
+                                <td><span class="status-badge status-badge--active">Activo</span></td>
+                                <td><a class="table-action-link" href="encuestas.html">Ver encuestas &rarr;</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CAN-004</strong></td>
+                                <td>
+                                    <div class="channel-cell">
+                                        <span class="channel-name">Plataforma</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="source-tag source-tag--qr">
+                                        Encuesta QR
+                                    </span>
+                                </td>
+                                <td>296</td>
+                                <td><span class="nps-metric-pill nps-metric-pill--warn">+45</span></td>
+                                <td><span class="status-badge status-badge--active">Activo</span></td>
+                                <td><a class="table-action-link" href="encuestas.html">Ver encuestas &rarr;</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CAN-005</strong></td>
+                                <td>
+                                    <div class="channel-cell">
+                                        <span class="channel-name">Ventanilla</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="source-tag source-tag--qr">
+                                        Encuesta QR
+                                    </span>
+                                </td>
+                                <td>206</td>
+                                <td><span class="nps-metric-pill nps-metric-pill--warn">+43</span></td>
+                                <td><span class="status-badge status-badge--active">Activo</span></td>
+                                <td><a class="table-action-link" href="encuestas.html">Ver encuestas &rarr;</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CAN-006</strong></td>
+                                <td>
+                                    <div class="channel-cell">
+                                        <span class="channel-name">Tarjeta Prepago</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="source-tag source-tag--clevertap">
+                                        CleverTap
+                                    </span>
+                                </td>
+                                <td>318</td>
+                                <td><span class="nps-metric-pill nps-metric-pill--high">+62</span></td>
+                                <td><span class="status-badge status-badge--active">Activo</span></td>
+                                <td><a class="table-action-link" href="encuestas.html">Ver encuestas &rarr;</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CAN-007</strong></td>
+                                <td>
+                                    <div class="channel-cell">
+                                        <span class="channel-name">Microcréditos</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="source-tag source-tag--traditional">
+                                        Encuestadoras
+                                    </span>
+                                </td>
+                                <td>97</td>
+                                <td><span class="nps-metric-pill nps-metric-pill--detractor">+39</span></td>
+                                <td><span class="status-badge status-badge--inactive">Inactivo</span></td>
+                                <td><a class="table-action-link" href="encuestas.html">Ver encuestas &rarr;</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <nav aria-label="Paginación">
+                    <ul class="pagination">
+                        <li><a class="pagination__link" href="canales.html" aria-label="Página anterior">‹</a></li>
+                        <li><a class="pagination__link" href="canales.html" aria-current="page">1</a></li>
+                        <li><a class="pagination__link" href="canales.html?pagina=2">2</a></li>
+                        <li><a class="pagination__link" href="canales.html?pagina=2" aria-label="Página siguiente">›</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+
+        <footer class="footer footer--slim">
+            <div class="container footer__inner">
+                <p class="small-flexo">CX Insight · Demostración académica</p>
+                <ul class="footer__links">
+                    <li><a class="footer__link" href="dashboard.html">Inicio</a></li>
+                    <li><a class="footer__link" href="canales.html">Canales</a></li>
+                    <li><a class="footer__link" href="encuestas.html">Encuestas</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

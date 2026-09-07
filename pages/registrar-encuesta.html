@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulario para registrar una respuesta NPS asociada a un canal.">
+    <title>Registrar encuesta | CX Insight</title>
+    <link rel="icon" href="../assets/img/logo/favicon-orange-whit-blue.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="navbar">
+            <div class="container navbar__inner">
+                <a class="navbar__brand" href="dashboard.html" aria-label="Ir al dashboard">
+                    <img class="navbar__logo" src="../assets/img/logo/logo-white-with-bluebg-bo.svg"
+                        alt="Logo institucional">
+                </a>
+                <nav aria-label="Navegación principal">
+                    <ul class="navbar__nav">
+                        <li><a class="navbar__link" href="dashboard.html">Dashboard</a></li>
+                        <li><a class="navbar__link" href="canales.html">Canales</a></li>
+                        <li><a class="navbar__link" href="encuestas.html" aria-current="page">Encuestas</a></li>
+                    </ul>
+                </nav>
+                <div class="navbar__profile">
+                    <div>
+                        <p class="small-flexo text-demi">María López</p>
+                        <p class="extra-small-flexo">Analista CX</p>
+                    </div>
+                    <span class="navbar__avatar" aria-hidden="true">ML</span>
+                    <a class="navbar__link" href="../index.html">Salir</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="internal-header">
+            <div class="container internal-header__content">
+                <div>
+                    <p class="small-flexo text-muted">Registro de encuesta</p>
+                    <p class="text-demi">Respuesta y clasificación</p>
+                </div>
+            </div>
+        </div>
+
+        <main class="page-main">
+            <div class="container">
+                <nav aria-label="Ruta de navegación">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="text-breadcrumb-link" href="dashboard.html">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item"><a class="text-breadcrumb-link" href="encuestas.html">Encuestas</a>
+                        </li>
+                        <li class="breadcrumb-item" aria-current="page">Registrar encuesta</li>
+                    </ol>
+                </nav>
+
+                <header class="page-header">
+                    <div class="page-header__content">
+                        <h1>Registrar encuesta</h1>
+                        <p class="text-muted">Asocia la respuesta con un canal y clasifica su experiencia.</p>
+                    </div>
+                </header>
+
+                <div class="form-layout">
+                    <!-- Main survey registration form -->
+                    <form class="card form-card" action="encuestas.html" method="get">
+                        <section class="form-section" aria-labelledby="identificacion-title">
+                            <header class="form-section__header">
+                                <h2 class="form-section__title" id="identificacion-title">
+                                    Identificación
+                                </h2>
+                                <p class="small-flexo text-muted">Los campos con asterisco son obligatorios.</p>
+                            </header>
+
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label class="form-label" for="codigo-encuesta">Código <span
+                                            class="form-label__required" aria-hidden="true">*</span></label>
+                                    <input class="form-control" id="codigo-encuesta" name="codigo" type="text"
+                                        placeholder="Ej. ENC-2487" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="fecha-encuesta">Fecha <span
+                                            class="form-label__required" aria-hidden="true">*</span></label>
+                                    <input class="form-control" id="fecha-encuesta" name="fecha" type="date" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="canal-encuesta">Canal <span
+                                            class="form-label__required" aria-hidden="true">*</span></label>
+                                    <select class="form-select" id="canal-encuesta" name="canal" required>
+                                        <option value="" selected disabled>Selecciona un canal</option>
+                                        <option value="cajeros-automaticos">Cajeros Automáticos</option>
+                                        <option value="agentes-bcp">Agentes BCP</option>
+                                        <option value="banca-movil">Banca Móvil</option>
+                                        <option value="plataforma">Plataforma</option>
+                                        <option value="ventanilla">Ventanilla</option>
+                                        <option value="tarjeta-prepago">Tarjeta Prepago</option>
+                                        <option value="microcreditos">Microcréditos</option>
+                                    </select>
+                                    <span class="form-help">La encuesta quedará vinculada al canal seleccionado.</span>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="origen-encuesta">Origen <span
+                                            class="form-label__required" aria-hidden="true">*</span></label>
+                                    <select class="form-select" id="origen-encuesta" name="origen" required>
+                                        <option value="" selected disabled>Selecciona una opción</option>
+                                        <option value="Agente IA">Agente IA</option>
+                                        <option value="CleverTap">CleverTap</option>
+                                        <option value="Encuesta QR">Encuesta QR</option>
+                                        <option value="Encuestadoras">Encuestadoras</option>
+                                        <option value="Carga manual">Carga manual</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="form-section" aria-labelledby="resultado-title">
+                            <header class="form-section__header">
+                                <h2 class="form-section__title" id="resultado-title">
+                                    Resultado NPS
+                                </h2>
+                                <p class="small-flexo text-muted">Registra el puntaje NPS y la clasificación ET_NPS
+                                    correspondiente.</p>
+                            </header>
+
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label class="form-label" for="puntuacion-encuesta">NPS <span
+                                            class="form-label__required" aria-hidden="true">*</span></label>
+                                    <select class="form-select" id="puntuacion-encuesta" name="puntuacion" required>
+                                        <option value="" selected disabled>Selecciona de 0 a 10</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="semana-encuesta">Semana <span
+                                            class="form-label__required" aria-hidden="true">*</span></label>
+                                    <select class="form-select" id="semana-encuesta" name="semana" required>
+                                        <option value="" selected disabled>Selecciona una semana</option>
+                                        <option value="S4-Ago">S4-Ago (Semana 4 - Agosto)</option>
+                                        <option value="S3-Ago">S3-Ago (Semana 3 - Agosto)</option>
+                                        <option value="S2-Ago">S2-Ago (Semana 2 - Agosto)</option>
+                                        <option value="S1-Ago">S1-Ago (Semana 1 - Agosto)</option>
+                                    </select>
+                                </div>
+
+                                <fieldset class="form-field form-grid__full">
+                                    <legend class="form-label">ET_NPS <span class="form-label__required" aria-hidden="true">*</span>
+                                    </legend>
+                                    <div class="choice-card-group choice-card-group--three">
+                                        <label class="choice-card">
+                                            <input type="radio" name="segmento" value="promotor" checked required>
+                                            <span class="choice-card__indicator" aria-hidden="true"></span>
+                                            <span class="choice-card__label">Promotor (9-10)</span>
+                                        </label>
+                                        <label class="choice-card">
+                                            <input type="radio" name="segmento" value="pasivo">
+                                            <span class="choice-card__indicator" aria-hidden="true"></span>
+                                            <span class="choice-card__label">Pasivo (7-8)</span>
+                                        </label>
+                                        <label class="choice-card">
+                                            <input type="radio" name="segmento" value="detractor">
+                                            <span class="choice-card__indicator" aria-hidden="true"></span>
+                                            <span class="choice-card__label">Detractor (0-6)</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <div class="form-field form-grid__full">
+                                    <label class="form-label" for="atributo-encuesta">Etiqueta <span
+                                            class="form-label__required" aria-hidden="true">*</span></label>
+                                    <select class="form-select" id="atributo-encuesta" name="atributo" required>
+                                        <option value="" selected disabled>Selecciona una etiqueta</option>
+                                        <option value="facilidad-uso">Facilidad de uso</option>
+                                        <option value="operacion-rapida">Operación rápida</option>
+                                        <option value="buen-trato">Buen trato</option>
+                                        <option value="informacion-clara">Información clara</option>
+                                        <option value="operacion-lenta">Operación lenta</option>
+                                        <option value="errores-sistema">Errores del sistema</option>
+                                        <option value="tiempo-espera">Tiempo de espera</option>
+                                        <option value="falta-informacion">Falta de información</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-field form-grid__full">
+                                    <label class="form-label" for="comentario-encuesta">Comentario</label>
+                                    <textarea class="form-textarea" id="comentario-encuesta" name="comentario"
+                                        maxlength="255"
+                                        placeholder="Escribe el comentario de la persona encuestada"></textarea>
+                                    <span class="form-help">No incluyas datos personales. Máximo 255 caracteres.</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="form-actions">
+                            <a class="button button--secondary" href="encuestas.html">Cancelar</a>
+                            <button class="button button--primary" type="submit">Guardar encuesta</button>
+                        </div>
+                    </form>
+
+                    <!-- Sidebar informative guidance -->
+                    <aside class="card form-guide-card" aria-label="Criterios de clasificación NPS">
+                        <header class="form-guide-header">
+                            <h3 class="form-guide-title">Clasificación ET_NPS</h3>
+                        </header>
+
+                        <ul class="form-guide-list">
+                            <li class="form-guide-item">
+                                <span class="form-guide-badge form-guide-badge--promoter" aria-hidden="true">9-10</span>
+                                <div class="form-guide-text">
+                                    <strong>Promotores</strong>
+                                    Clientes leales y muy satisfechos. Recomiendan activamente la experiencia en el canal.
+                                </div>
+                            </li>
+                            <li class="form-guide-item">
+                                <span class="form-guide-badge form-guide-badge--passive" aria-hidden="true">7-8</span>
+                                <div class="form-guide-text">
+                                    <strong>Pasivos</strong>
+                                    Clientes satisfechos pero neutros. Su fidelidad es vulnerable ante alternativas del mercado.
+                                </div>
+                            </li>
+                            <li class="form-guide-item">
+                                <span class="form-guide-badge form-guide-badge--detractor" aria-hidden="true">0-6</span>
+                                <div class="form-guide-text">
+                                    <strong>Detractores</strong>
+                                    Clientes con fricción en su interacción. Requieren análisis causal y atención correctiva.
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer footer--slim">
+            <div class="container footer__inner">
+                <p class="small-flexo">CX Insight · Demostración académica</p>
+                <ul class="footer__links">
+                    <li><a class="footer__link" href="dashboard.html">Inicio</a></li>
+                    <li><a class="footer__link" href="canales.html">Canales</a></li>
+                    <li><a class="footer__link" href="encuestas.html">Encuestas</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

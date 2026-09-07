@@ -37,7 +37,7 @@
 }
 
 .data-table tbody tr:hover {
-  background: #fafbfe;
+  background: var(--bcp-color-surface-hover);
 }
 
 .data-table__actions {
@@ -45,6 +45,18 @@
   align-items: center;
   justify-content: flex-end;
   gap: var(--bcp-space-8);
+}
+
+.channel-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--bcp-space-12);
+  font-weight: var(--bcp-font-weight-medium);
+}
+
+.channel-name {
+  color: var(--bcp-text-dark-900);
+  font-weight: var(--bcp-font-weight-demi);
 }
 
 .status-badge {

@@ -19,7 +19,7 @@
 .form-textarea {
   width: 100%;
   min-height: 2.875rem;
-  padding: var(--bcp-space-10, 0.625rem) var(--bcp-space-12);
+  padding: var(--bcp-space-8) var(--bcp-space-12);
   border: 1px solid var(--bcp-border-color-strong);
   border-radius: var(--bcp-border-radius-8);
   outline: none;
@@ -57,7 +57,7 @@
 .form-select:disabled,
 .form-textarea:disabled {
   border-color: var(--bcp-border-color);
-  background: #eceef4;
+  background: var(--bcp-color-disabled);
   color: var(--bcp-text-dark-500);
   cursor: not-allowed;
 }
@@ -105,19 +105,7 @@
 
 .search-field {
   position: relative;
-}
-
-.search-field .form-control {
-  padding-left: var(--bcp-space-40);
-}
-
-.search-field__icon {
-  position: absolute;
-  top: 50%;
-  left: var(--bcp-space-12);
-  width: 1.125rem;
-  height: 1.125rem;
-  color: var(--bcp-text-dark-500);
-  pointer-events: none;
-  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  width: 100%;
 }

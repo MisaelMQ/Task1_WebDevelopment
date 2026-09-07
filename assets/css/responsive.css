@@ -8,17 +8,6 @@
     grid-template-columns: 1fr;
   }
 
-  .dashboard-filters {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .records-toolbar {
-    grid-template-columns: 1fr auto;
-  }
-
-  .records-toolbar > :first-child {
-    grid-column: 1 / -1;
-  }
 }
 
 @media (max-width: 48rem) {
@@ -64,14 +53,9 @@
   .grid--metrics,
   .grid--two-columns,
   .grid--three-columns,
-  .dashboard-filters,
   .form-grid,
-  .records-toolbar {
+  .records-toolbar__main {
     grid-template-columns: 1fr;
-  }
-
-  .records-toolbar > :first-child {
-    grid-column: auto;
   }
 
   .login-page {
